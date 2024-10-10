@@ -1,0 +1,305 @@
+/* ********* This is for carosuoul slider ********** */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap');
+/* ****************************************************************************************************** */
+/* ****************************************************************************************************** */
+
+
+/* //===== For all headingn line =====// */
+.h-line{
+    width: 210px;
+    margin: 0 auto;
+    height: 1.7px;
+}
+
+
+
+
+#another_section{
+  background-image: url("../images/animated_background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+
+
+
+
+
+/* First navbar social media icon  */
+.social_media_icon{
+    text-decoration: none;
+}
+@media only screen and (max-width: 500px) {
+    #navbarSupportedContent{
+        margin-left: 100px;
+  }
+}
+
+
+
+
+
+/* //===== CAROSOUL SLIDE PART START =====// */
+.carosoul img{
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    opacity: 0.7;
+}
+.carosoul h1{
+    font-size: 62px;
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+.carosoul p{
+    color: white;
+    font-size: 17px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.heading{
+    margin-bottom: 130px;
+}
+@media only screen and (max-width: 950px) {
+  .heading{
+  margin-bottom: 60px;
+  } 
+} 
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid black;
+    padding: 12px 34px;
+    font-size: 13px;
+    position: relative;
+    cursor: pointer;
+    background: #198754;
+}
+.hero-btn:hover{
+    border: 1px solid black;
+    background: rgb(3, 55, 3);
+    transition: 1s;
+    color: white;
+}
+@media only screen and (max-width: 450px) {
+  .carosoul h1{
+  font-size: 50px;
+  margin-bottom: 20px;
+}   
+.carosoul p{
+  display: none;
+}  
+.heading{
+margin-bottom: 80px;
+}    
+}
+/* //===== CAROSOUL SLIDE PART END =====// */
+
+
+
+/* //===== landing page design =====// */
+.landing_page{
+    background-image: url(../images/landing_page.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+/* ====== COURSES PART START ====== */
+.pop:hover {
+    background-color: #ffdede;
+    transform: scale(1.03);
+    transition: all 0.2s;
+}
+/* ===== COURSES PART END ===== */
+
+
+
+
+
+
+/* =====// Second navbar //=====  */
+#navbarText{
+    margin-left: 300px;
+}
+
+@media only screen and (max-width: 500px) {
+    #navbarText{
+        margin-left: 0px;
+  }
+}
+
+
+
+
+/* =====// Footer Start //=====  */
+.footer{
+    /* background-image: url(../image/background_01.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+    background-color: #391a4f;
+}
+/* =====// Footer End //===== */
+
+
+
+/* ===== Testimonial Card ===== */
+.review-card {
+    background-color: white;
+	padding: 20px;
+	/* box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3); */
+    border-radius: 15px;
+}
+.img-area {
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	border-radius: 50%;
+	margin-right: 25px;
+}
+.img-area img {
+	width: 100%;
+}
+.header-content {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.info h4 {
+	margin: 0;
+	font-size: 22px;
+	font-weight: 600;
+}
+.info p {
+	margin: 5px 0 0;
+	font-size: 14px;
+	font-weight: 400;
+	color: #666;
+}
+.single-review p {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.7;
+	color: #333;
+}
+.review-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 10px;
+	font-size: 14px;
+	color: #666;
+}
+.rating {
+	display: flex;
+}
+.rating span {
+	color: #000;
+	font-size: 18px;
+}
+.rating span.active {
+	color: #fbc02d;
+}
+
+
+
+/* ==========// THIS PART IS FOR ALL DETAILS SECTION //=========== */
+.blog_details h5{
+    background: #f44336;
+    color: #fff;
+    padding: 7px 0;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+/* ==========// THIS PART IS FOR ALL  DETAILS SECTION //=========== */
+
+
+
+
+/* ==========// PORTFOLIO DESIGN SECTION START //=========== */
+.team .member {
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-align: center;
+    /* border-radius: 5px; */
+    border-radius: 3px;
+    background: #fff;
+    /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1); */
+  }
+
+  .team .member .member-img {
+    position: relative;
+    overflow: hidden;
+  }
+  .team .member .member-img img{
+    height: 300px;
+    width: 420px;
+  }
+
+  .team .member .social {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+    text-align: center;
+    /* background: rgba(255, 255, 255, 0.85); */
+  }
+
+  .team .member .social a {
+    transition: color 0.3s;
+    color: #111;
+    margin: 0 10px;
+    padding-top: 8px;
+    display: inline-block;
+  }
+
+  .team .member .social a:hover {
+    color: #1bbd36;
+  }
+
+  .team .member .social i {
+    font-size: 18px;
+    margin: 0 2px;
+  }
+
+  .team .member .member-info {
+    padding: 25px 15px;
+  }
+
+  .team .member .member-info h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #111;
+  }
+
+  .team .member .member-info span {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #b4aca8;
+  }
+
+  .team .member .member-info p {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 26px;
+    color: #847872;
+  }
+
+  .team .member:hover .social {
+    opacity: 1;
+  }
+/* ==========// PORTFOLIO DESIGN SECTION END//=========== */
