@@ -6,11 +6,19 @@
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <!-- <img src="image/profile.jpg" class="avatar img-fluid rounded" alt=""> -->
-                                 <h4>Graphical World</h4>
+                                 <h4>
+                                 <?php
+                               if($_SESSION["email"]  == true){
+                                   echo $_SESSION["email"];
+                               }
+                               else{
+                                   echo "something went wrong";
+                               }
+                               ?>
+                                 </h4>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a href="#" class="dropdown-item">Profile</a>
+                                <a href="password_change.php" class="dropdown-item">Change Password</a>
                                 <a href="#" class="dropdown-item">Setting</a>
                                 <a href="logout.php" class="dropdown-item">Logout</a>
                             </div>
