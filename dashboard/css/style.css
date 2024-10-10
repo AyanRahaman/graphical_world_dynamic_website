@@ -42,6 +42,7 @@ h4 {
     max-width: 264px;
     min-width: 264px;
     background: var(--bs-dark);
+    background: white;
     transition: all 0.35s ease-in-out;
 }
 
@@ -53,17 +54,18 @@ h4 {
     overflow: hidden;
     transition: all 0.35s ease-in-out;
     width: 100%;
-    background: var(--bs-dark-bg-subtle);
+    /* background: var(--bs-dark-bg-subtle); */
 }
 
-/* Sidebar Elements Style */
 
+
+/* Sidebar Elements Style */
 .sidebar-logo {
     padding: 1.15rem;
 }
 
 .sidebar-logo a {
-    color: #e9ecef;
+    color: rgb(50, 47, 25);
     font-size: 1.15rem;
     font-weight: 600;
 }
@@ -76,14 +78,15 @@ h4 {
 }
 
 .sidebar-header {
-    color: #e9ecef;
+    color: green;
     font-size: .75rem;
     padding: 1.5rem 1.5rem .375rem;
+    font-weight: bold;
 }
 
 a.sidebar-link {
     padding: .625rem 1.625rem;
-    color: #e9ecef;
+    color: black;
     position: relative;
     display: block;
     font-size: 0.875rem;
