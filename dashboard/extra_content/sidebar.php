@@ -85,6 +85,12 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="sidebar-item">
+                        <a href="logout.php" class="sidebar-link text-danger">
+                            <i class="fa-solid fa-power-off pe-2"></i>
+                            Logout
+                        </a>
+                    </li>
                 </ul>
             </div>
         </aside>
