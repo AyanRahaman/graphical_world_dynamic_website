@@ -2,16 +2,28 @@
             <!-- Content For Sidebar -->
             <div class="h-100">
                 <div class="sidebar-logo">
-                    <a href="#">CodzSword</a>
+                    <a href="#">Graphical World</a>
                 </div>
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
                         Admin Elements
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
+                        <a href="dashboard.php" class="sidebar-link">
                             <i class="fa-solid fa-list pe-2"></i>
-                            Dashboard
+                            dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="settings.php" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            Settings
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="about.php" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            About Us
                         </a>
                     </li>
                     <li class="sidebar-item">

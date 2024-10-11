@@ -54,7 +54,7 @@ if(!empty($_SESSION['login'])){
                     </div>
                     <div class="row">
                         <div class="col-12 col-md-6 d-flex">
-                            <div class="card flex-fill border-0 illustration">
+                            <div class="card flex-fill border border-dark illustration shadow ">
                                 <div class="card-body p-0 d-flex flex-fill">
                                     <div class="row g-0 w-100">
                                         <div class="col-6">
@@ -112,9 +112,12 @@ if(!empty($_SESSION['login'])){
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">Message</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -8,4 +8,10 @@
        -- Dashboard Creat Complete
 
 3. 10/10/2024
-       -- Backend Creating Start        
+       -- Backend Creating Start    
+
+
+4. 11/10/2024
+       -- Contact us section fully dynamic complete
+       --About us section complete (Dashbhboard) 
+       -- Setting section complete (Dashboard)          
