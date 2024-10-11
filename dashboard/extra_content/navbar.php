@@ -9,7 +9,9 @@
                                  <h4>
                                  <?php
                                if($_SESSION["email"]  == true){
+                            
                                    echo $_SESSION["email"];
+                                   echo '<i class="fa-solid fa-user pe-2"></i>';
                                }
                                else{
                                    echo "something went wrong";

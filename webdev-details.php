@@ -135,7 +135,7 @@ require_once("common_content/second_navbar.php");
           </table>
 
           <nav class="blog-pagination mt-5" aria-label="Pagination">
-            <a href="contact_us.html"><button type="button" class="btn btn-info">
+            <a href="contact_us.php"><button type="button" class="btn btn-info">
                 Got a project? Contact us!
               </button></a>
           </nav>
