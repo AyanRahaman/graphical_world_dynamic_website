@@ -31,77 +31,24 @@ require_once("common_content/second_navbar.php");
 
 
 
-<!-- //===== CAROSOUL SLIDE START =====// -->
-<!-- <div class="mt-1">
-    <div id="demo" class="carousel slide" data-bs-ride="carousel"> -->
-
-      <!-- Indicators/dots -->
-      <!-- <div class="carousel-indicators">
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-      </div> -->
-
-      <!-- The slideshow/carousel -->
-      <!-- <div class="carousel-inner carosoul">
-        <div class="carousel-item active">
-          <img src="image/carosoul_01.jpg" alt="Los Angeles" class="d-block" style="width:100%; height: 570px;">
-          <div class="carousel-caption heading">
-            <h1 class="text-dark">Welcome to - GRAPHICAL WORLD</h1>
-            <p class="text-dark">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi corporis,
-              nam
-              accusamus voluptatem qui
-              impedit. Voluptatibus deserunt maiores cumque architecto nulla? Nam magnam repellendus
-              laudantium?
-            </p>
-            <a href="contact_us.html" class="hero-btn fw-bold">Visit Us To Know More</a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="image/carosoul_02.jpg" alt="Chicago" class="d-block" style="width:100%; height: 570px;">
-          <div class="carousel-caption heading">
-            <h1 class="text-dark">Welcome to - GRAPHICAL WORLD</h1>
-            <p class="text-dark">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi corporis,
-              nam
-              accusamus voluptatem qui
-              impedit. Voluptatibus deserunt maiores cumque architecto nulla? Nam magnam repellendus
-              laudantium?
-            </p>
-            <a href="contact_us.html" class="hero-btn fw-bold">Visit Us To Know More</a>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="image/carosoul_03.jpg" alt="New York" class="d-block" style="width:100%; height: 570px;">
-          <div class="carousel-caption heading">
-            <h1 class="text-dark">Welcome to - GRAPHICAL WORLD</h1>
-            <p class="text-dark">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi corporis,
-              nam
-              accusamus voluptatem qui
-              impedit. Voluptatibus deserunt maiores cumque architecto nulla? Nam magnam repellendus
-              laudantium?
-            </p>
-            <a href="contact_us.html" class="hero-btn fw-bold">Visit Us To Know More</a>
-          </div>
-        </div>
-      </div> -->
-
-      <!-- Left and right controls/icons -->
-      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-    </div>
-  </div> -->
-  <!-- //===== CAROSUOL SLIDE END =====// -->
-
-
-
 
 
 
   <!-- //===== LANDING PAGE START =====// -->
+  <?php
+         require_once("dashboard/partials/DBconnect.php");
+         $sql = "SELECT * FROM contact_us";
+         $stmt = $connectingDB->query($sql);
+         while ($Data = $stmt->fetch()) {
+             $address = $Data["address"];
+             $heading_title = $Data["heading"];
+             $ph1 = $Data["ph1"];
+             $ph2 = $Data["ph2"];
+             $email = $Data["email"];
+             $g_map = $Data["g_map"];
+         }
+         
+         ?>
   <div class="hero vh-100 d-flex align-items-center" id="home">
       <div class="container">
           <div class="row">
@@ -191,14 +138,6 @@ require_once("common_content/second_navbar.php");
   
 
 
-
-  <!-- //===== BLANK DIV PART START =====// -->
-  <!-- <div style="padding: 0.5px;
-            /* background-color: #198754; */
-            background-color:gray;
-">
-  </div> -->
-  <!-- //===== BLANK DIV PART END =====// -->
 
 
 
@@ -302,7 +241,16 @@ require_once("common_content/second_navbar.php");
 
 
 
-
+<!-- //===== BOOK AN APPOINTMENT SECTION START =====//  -->
+<section class="p-5 text-white text-center shadow border" id="book_appointment">
+    <h1 class="font-monospace fw-bold">MAKE YOUR DREAM SMILE A REALITY</h1>
+    <p class="my-4 fw-bold">Call Us To Book Your Appointment Today</p>
+    <a href="tel:7029979185"><button type="button" class="btn btn-warning text-dark border border-dark rounded-0 fw-bold p-3 shadow-none  me-2"><i class="fa fa-phone"></i>
+        7029979185</button></a>
+    <a href="contact_us.html"><button type="button" class="btn btn-outline-warning border rounded-0 fw-bold p-3 shadow-none">Book
+          an Appointment</button></a>   
+  </section><br><br>
+  <!-- //===== BOOK AN APPOINTMENT SECTION START =====//  -->
 
 
 
@@ -310,8 +258,6 @@ require_once("common_content/second_navbar.php");
 
 
   <!-- //===== TESTIMONIAL SECTION START =====//  -->
-  <!-- <h2 class="mt-5 pt-4 text-center fw-bold h-font">Our Client Feedback</h2>
-  <div class="h-line bg-dark mb-5"></div> -->
 
   <div class="container mt-5 mb-5">
   <div class="section-title ps-lg-5 mb-5">
@@ -480,24 +426,10 @@ require_once("common_content/second_navbar.php");
 
 
 
-   <!-- //===== BOOK AN APPOINTMENT SECTION START =====//  -->
-   <section class="p-5 text-dark text-center shadow border" style="background-color: white; margin-left: 10px;margin-right: 10px; margin-bottom: 10px;">
-    <h1 class="font-monospace fw-bold">MAKE YOUR DREAM SMILE A REALITY</h1>
-    <p class="my-4 fw-bold">Call Us To Book Your Appointment Today</p>
-    <a href="contact_us.html"><button type="button" class="btn btn-info border fw-bold text-white p-3 shadow-none">Book
-        an Appointment</button></a>
-  </section>
-  <!-- //===== BOOK AN APPOINTMENT SECTION START =====//  -->
 
 
 
 
-    <!-- //===== BLANK DIV PART START =====// -->
-    <div style="padding: 2px;
-            background-color: #fff;
-">
-  </div>
-  <!-- //===== BLANK DIV PART END =====// -->
 
 
 

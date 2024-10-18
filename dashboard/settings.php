@@ -133,19 +133,19 @@ if(!empty($_SESSION['login'])){
                                     <label class="form-label fw-bold">Site Title</label>
                                     <input type="text" name="site_title" id="site_title_inp"
                                         class="form-control shadow-none" required value="<?php echo $site_title; ?>"/>
-                                    <?php if(isset($_POST["settings"])){ echo "<span class='text-danger'>".$empty_title."</span>"; } ?>    
+                                    <?php if(isset($_POST["general_settings"])){ echo "<span class='text-danger'>".$empty_title."</span>"; } ?>    
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Site About</label>
                                     <textarea class="form-control shadow-none" rows="4" name="site_about"
                                         id="site_about_inp" required><?php echo $site_about; ?></textarea>
-                                    <?php if(isset($_POST["settings"])){ echo "<span class='text-danger'>".$empty_about."</span>"; } ?>    
+                                    <?php if(isset($_POST["general_settings"])){ echo "<span class='text-danger'>".$empty_about."</span>"; } ?>    
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Marquee Heading</label>
                                     <textarea class="form-control shadow-none" rows="6" name="marquee_heading"
                                         id="marquee_heading_inp" required><?php echo $marquee_heading; ?></textarea>
-                                    <?php if(isset($_POST["settings"])){ echo "<span class='text-danger'>".$empty_heading."</span>"; } ?>    
+                                    <?php if(isset($_POST["general_settings"])){ echo "<span class='text-danger'>".$empty_heading."</span>"; } ?>    
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -427,7 +427,7 @@ if(!empty($_SESSION['login'])){
 
 
 
- <!-- ===== //TESTIMONIAL IMAGE BODY PART START// ===== -->
+ <!-- ===== //LANDING PAGE START// ===== -->
  <div class="col-md-12 col-lg-12 p-4">
                         <div class="p-3 border border-dark bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                            
@@ -435,11 +435,11 @@ if(!empty($_SESSION['login'])){
                             <?php
                                        require_once("partials/DBconnect.php");
                                        
-                                       $sql = "SELECT * FROM image_slider_body";
+                                       $sql = "SELECT * FROM landing_page";
                                        $stmt = $connectingDB->query($sql);
                                        while ($Data = $stmt->fetch()) {
-                                           $slider_title = $Data["slider_title"];
-                                           $slider_body = $Data["slider_body"];
+                                           $title = $Data["title"];
+                                           $body = $Data["body"];
                                        }
                                        ?>
                             <div class="card-body">
@@ -452,31 +452,31 @@ if(!empty($_SESSION['login'])){
                                     </button>
                                 </div>
                                 <h6 class="card-subtitle mb-1 fw-bold">Title</h6>
-                                <p class="card-text" id="site_title"><?php echo $slider_title; ?></p>
+                                <p class="card-text" id="site_title"><?php echo $title; ?></p>
                                 <h6 class="card-subtitle mb-1 fw-bold">Body</h6>
-                                <p class="card-text" id="site_about"><?php echo $slider_body; ?></p>
+                                <p class="card-text" id="site_about"><?php echo $body; ?></p>
                             </div>
                             <!-- ===Testimonisal image body section end===  -->
                             <!--===Testimonisal image body Modal start===-->
                             <?php
-                              $empty_slider_title = "";
-                              $empty_slider_body = "";
-                              if (isset($_POST["slider_body_submit"])) {
+                              $empty_title = "";
+                              $empty_body = "";
+                              if (isset($_POST["landing_page_submit"])) {
                                 
-                                  $slider_title = $_POST["slider_title"];
-                                  $slider_body = $_POST["slider_body"];
+                                  $title = $_POST["title"];
+                                  $body = $_POST["body"];
 
-                                  if(empty($_POST["slider_title"])){
-                                    $empty_slider_title = "Please enter this field";
+                                  if(empty($_POST["title"])){
+                                    $empty_title = "Please enter this field";
                                   }
-                                  if(empty($_POST["slider_body"])){
-                                      $empty_slider_body = "Please enter this field";
+                                  if(empty($_POST["body"])){
+                                      $empty_body = "Please enter this field";
                                   }
 
 
-                                  if(!empty($_POST["slider_title"]) && !empty($_POST["slider_body"])){
+                                  if(!empty($_POST["title"]) && !empty($_POST["body"])){
 
-                                    $query2 = "UPDATE image_slider_body SET slider_title = '$slider_title', slider_body = '$slider_body'  WHERE id=1";
+                                    $query2 = "UPDATE landing_page SET title = '$title', body = '$body'  WHERE id=1";
                               
                                     $result2 = $connectingDB->query($query2);
                               
@@ -502,15 +502,15 @@ if(!empty($_SESSION['login'])){
                             <div class="modal-body">
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Title</label>
-                                    <input type="text" name="slider_title" id="site_title_inp"
-                                        class="form-control shadow-none" required value="<?php echo $slider_title; ?>"/>
-                                    <?php if(isset($_POST["settings"])){ echo "<span class='text-danger'>".$empty_slider_title."</span>"; } ?>    
+                                    <input type="text" name="title" id="site_title_inp"
+                                        class="form-control shadow-none" required value="<?php echo $title; ?>"/>
+                                    <?php if(isset($_POST["landing_page_submit"])){ echo "<span class='text-danger'>".$empty_title."</span>"; } ?>    
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Body</label>
-                                    <textarea class="form-control shadow-none" rows="4" name="slider_body"
-                                        id="site_about_inp" required><?php echo $slider_body; ?></textarea>
-                                    <?php if(isset($_POST["settings"])){ echo "<span class='text-danger'>".$empty_slider_body."</span>"; } ?>    
+                                    <textarea class="form-control shadow-none" rows="4" name="body"
+                                        id="site_about_inp" required><?php echo $body; ?></textarea>
+                                    <?php if(isset($_POST["landing_page_submit"])){ echo "<span class='text-danger'>".$empty_body."</span>"; } ?>    
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -518,7 +518,7 @@ if(!empty($_SESSION['login'])){
                                     class="btn text-secondary shadow-none" data-bs-dismiss="modal">
                                     Cancel
                                 </button>
-                                <button type="submit" name="slider_body_submit" class="btn btn-dark text-white shadow-none">
+                                <button type="submit" name="landing_page_submit" class="btn btn-dark text-white shadow-none">
                                     Submit
                                 </button>
                             </div>
@@ -529,7 +529,7 @@ if(!empty($_SESSION['login'])){
             <!-- ===Testimonial image body modaL end=== -->
                         </div>
                     </div>
-    <!-- ===== //TESTIMONIAL IMAGE BODY PART END// ===== -->
+    <!-- ===== //LANDING PAGE END// ===== -->
 
 
 

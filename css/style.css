@@ -125,63 +125,6 @@
 
 
 
-/* //===== CAROSOUL SLIDE PART START =====// */
-/* .carosoul img{
-    filter: blur(3px);
-    -webkit-filter: blur(3px);
-    opacity: 0.7;
-}
-.carosoul h1{
-    font-size: 62px;
-    color: white;
-    font-family: 'Anton', sans-serif;
-}
-.carosoul p{
-    color: white;
-    font-size: 17px;
-    font-family: 'Roboto Condensed', sans-serif;
-}
-.heading{
-    margin-bottom: 130px;
-}
-@media only screen and (max-width: 950px) {
-  .heading{
-  margin-bottom: 60px;
-  } 
-} 
-.hero-btn{
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    border: 1px solid black;
-    padding: 12px 34px;
-    font-size: 13px;
-    position: relative;
-    cursor: pointer;
-    background: #198754;
-}
-.hero-btn:hover{
-    border: 1px solid black;
-    background: rgb(3, 55, 3);
-    transition: 1s;
-    color: white;
-}
-@media only screen and (max-width: 450px) {
-  .carosoul h1{
-  font-size: 50px;
-  margin-bottom: 20px;
-}   
-.carosoul p{
-  display: none;
-}  
-.heading{
-margin-bottom: 80px;
-}    
-} */
-/* //===== CAROSOUL SLIDE PART END =====// */
-
-
-
 /* ====== OUR TEAM PART START ====== */
 .pop-about:hover{
   background: grey;
@@ -312,6 +255,33 @@ margin-bottom: 80px;
     text-align: center;
 }
 /* ==========// THIS PART IS FOR ALL  DETAILS SECTION //=========== */
+
+
+
+
+
+
+/* //===== BOOK AN APPOINTEMENT PAGE START =====// */
+#book_appointment{
+  background-image: url("../image/book_appointemnt.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+#book_appointment a button{
+  color: white;
+}
+#book_appointment a button:hover{
+  color: black;
+}
+@media only screen and (max-width: 500px) {
+  #book_appointment a button{
+    margin-bottom: 20px;
+  }
+}   
+/* //===== BOOK AN APPOINTEMENT PAGE END =====// */
+
+
 
 
 
