@@ -223,7 +223,7 @@ require_once("common_content/second_navbar.php");
       </div>
     </div>
   </div>
-  <!-- ===== BLOG PART END ===== -->
+ <!-- ===== BLOG PART END ===== -->
 
 
 

@@ -59,8 +59,6 @@ require_once("common_content/second_navbar.php");
           </p><br>
           <hr>
           <h2 class="fw-bold">OUR SERVICES</h2>
-          <!-- <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly
-            repetitive body text used throughout. This is an example unordered list:</p> -->
           <div class="our_services">
             <div class="row">
               <div class="col-lg-4">

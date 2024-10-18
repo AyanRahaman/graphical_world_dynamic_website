@@ -2,9 +2,9 @@
 require_once("upper_links.php");
  ?>
  <!-- //===== SECOND NAVBAR START =====// -->
- <nav class="navbar navbar-expand-lg navbar-light shadow sticky-top" style="background-color: white">
+ <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top" style="background-color: black">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">
+      <a class="navbar-brand fw-bold" href="index.php">
         <img src="image/logo.jpg" alt="logo" class="img-fluid mx-auto rounder">
       </a>
       <button class="navbar-toggler shadow-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -14,28 +14,28 @@ require_once("upper_links.php");
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active text-success fw-bold" aria-current="page" href="index.php">Home</a>
+            <a class="nav-link active text-warning fw-bold" aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark fw-bold" href="about_us.php">About Us</a>
+            <a class="nav-link text-white fw-bold" href="about_us.php">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark fw-bold" href="services.php">Services</a>
+            <a class="nav-link text-white fw-bold" href="services.php">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark fw-bold" href="portfolio.php">Portfolio</a>
+            <a class="nav-link text-white fw-bold" href="portfolio.php">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-dark fw-bold" href="contact_us.php">Contact us</a>
+            <a class="nav-link text-white fw-bold" href="contact_us.php">Contact us</a>
           </li>
         </ul>
         <span class="navbar-text">
-          <button type="button" class="btn btn-warning rounded-pill mx-1">
-            <a href="contact_us.html" class="text-decoration-none">Graphical World</a>
+          <button type="button" class=" border border-warning border-2  mx-1 btn btn-outline-warning">
+            <a href="contact_us.html" class="text-decoration-none">Register</a>
           </button>
-          <!-- <button type="button" class="btn btn-warning rounded-pill mx-1">
-            <a href="" class="text-decoration-none">SignUp</a>
-          </button> -->
+          <button type="button" class="btn border border-warning border-2  mx-1 btn btn-outline-warning">
+            <a href="contact_us.html" class="text-decoration-none">Login</a>
+          </button>
         </span>
       </div>
     </div>

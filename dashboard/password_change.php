@@ -1,5 +1,17 @@
 <?php
 
+
+//for calling the redirect fuction
+require_once("extra_content/function.php");
+
+if(!empty($_SESSION['login'])){
+    //   echo ($_SESSION['login']);
+    }
+    else{
+        Redirect_to("admin_login.php");
+    }
+
+
 session_start();
 //for calling the redirect fuction
 require_once("extra_content/function.php");

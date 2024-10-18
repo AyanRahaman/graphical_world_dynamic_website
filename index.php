@@ -15,7 +15,7 @@ require_once("common_content/upper_links.php");
 
 
 
-<body class="bg-light">
+<body>
 
 <!-- ===============================================================================================================  -->
 <?php
@@ -32,18 +32,18 @@ require_once("common_content/second_navbar.php");
 
 
 <!-- //===== CAROSOUL SLIDE START =====// -->
-<div class="mt-1">
-    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+<!-- <div class="mt-1">
+    <div id="demo" class="carousel slide" data-bs-ride="carousel"> -->
 
       <!-- Indicators/dots -->
-      <div class="carousel-indicators">
+      <!-- <div class="carousel-indicators">
         <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
         <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
         <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-      </div>
+      </div> -->
 
       <!-- The slideshow/carousel -->
-      <div class="carousel-inner carosoul">
+      <!-- <div class="carousel-inner carosoul">
         <div class="carousel-item active">
           <img src="image/carosoul_01.jpg" alt="Los Angeles" class="d-block" style="width:100%; height: 570px;">
           <div class="carousel-caption heading">
@@ -83,25 +83,47 @@ require_once("common_content/second_navbar.php");
             <a href="contact_us.html" class="hero-btn fw-bold">Visit Us To Know More</a>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Left and right controls/icons -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
         <span class="carousel-control-prev-icon"></span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
         <span class="carousel-control-next-icon"></span>
       </button>
     </div>
-  </div>
+  </div> -->
   <!-- //===== CAROSUOL SLIDE END =====// -->
+
+
+
+
+
+
+  <!-- //===== LANDING PAGE START =====// -->
+  <div class="hero vh-100 d-flex align-items-center" id="home">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-7 mx-auto text-center">
+                  <h1 class="display-4 text-white">WELCOME TO - GRAPHICAL WORLD</h1>
+                  <p class="text-white my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quia
+                      sequi eius. Quas, totam aliquid. Repudiandae reiciendis vel excepturi ipsa voluptate dicta!</p>
+                  <a href="#" class="btn me-2 btn-primary p-3 rounded-0">Get Started</a>
+                  <a href="#" class="btn btn-outline-light p-3 rounded-0">My Portfolio</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- //===== LANDING PAGE END =====// -->
+
 
 
 
 
   
   <!--//===== MARQUEE HEADING PART START ===== //-->
-  <div class="p-2 shadow-sm fst-italic" style="background-color: #198754;">
+  <div class="p-2 shadow-sm fst-italic" style="background-color: black;">
     <marquee behavior="" direction="">
       <h5 class="text-white p-1">
         <i class="fa-solid fa-star text-warning"></i>
@@ -114,89 +136,68 @@ require_once("common_content/second_navbar.php");
           Bengal 731124 -->
       </h5>
     </marquee>
-  </div>
+  </div><br>
   <!-- //===== MARQUEE HEADING PART END =====//  -->
 
 
 
-  <!-- //===== OUR FACILITY SECTION START =====// -->
-  <h2 class="mt-5 pt-4 text-center fw-bold h-font">Services Provided by us</h2>
-  <div class="h-line bg-dark mb-5"></div>
+
+  <!-- //===== OUR SERVICES SECTION START =====//  -->
+  <div class="container mt-5">
+  <div class="section-title ps-lg-5">
+          <h2>Services</h2>
+          <p>Check our Services</p>
+        </div>
+
+        <div class="row p-lg-5">
+            <div class="col-lg-6 col-md-6 mb-4">
+                 <div class="bg-white rounded border border-1 p-5 text-center box pop">
+                    <i class="fa-solid fa-chart-simple fs-2 rounded p-3 bg-warning"></i>
+                    <a href="digital-markeeting-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold">Digital Markeeting</h4></a>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus ut, aperiam accusantium illum vel eum totam atque ex cumque corrupti.</p>
+                 </div>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4">
+                 <div class="bg-white rounded border border-1 p-5 text-center box pop">
+                    <i class="fa-solid fa-camera-rotate fs-2 rounded p-3 bg-warning"></i>
+                    <a href="photography-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold">Photography</h4></a>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus ut, aperiam accusantium illum vel eum totam atque ex cumque corrupti.</p>
+                 </div>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4">
+                 <div class="bg-white rounded border border-1 p-5 text-center box pop">
+                    <i class="fa-solid fa-wand-magic-sparkles fs-2 rounded p-3 bg-warning"></i>
+                    <a href="graphics-design-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold">Graphic Design</h4></a>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus ut, aperiam accusantium illum vel eum totam atque ex cumque corrupti.</p>
+                 </div>
+            </div>
+            <div class="col-lg-6 col-md-6 mb-4">
+                 <div class="bg-white rounded border border-1 p-5 text-center box pop">
+                    <i class="fa-solid fa-earth-oceania fs-2 rounded p-3 bg-warning"></i>
+                    <a href="webdev-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold">Wesite Building</h4></a>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus ut, aperiam accusantium illum vel eum totam atque ex cumque corrupti.</p>
+                 </div>
+            </div>
+        </div>
+    </div><br>
+<!-- //===== OUR SERVICES SECTION END =====//  -->
 
 
-  <div class="container mb-5">
-    <div class="row g-5">
-      <div class="col-12 col-lg-3">
-        <div class="card shadow border-0 rounded text-center pop">
-          <img src="image/photography.jpg" class="card-img-top" alt="" height="200">
-          <div class="card-body">
-            <h3 class="card-title fw-bold">Photography</h3>
-            <!-- <p class="card-text">
-            Succulent beef patty topped with melted cheddar cheese,
-            caramelized onions, crispy bacon, and tangy barbecue sauce
-          </p> -->
-            <button class="btn"><a href="contact_us.html" class="text-decoration-none text-dark">Got a Project? Contact
-                Us</a></button>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-lg-3">
-        <div class="card shadow border-0 rounded text-center pop">
-          <img src="image/graphic_design.jpg" class="card-img-top" alt="" height="200px">
-          <div class="card-body">
-            <h3 class="card-title fw-bold">Graphic Design</h3>
-            <!-- <p class="card-text">
-            Succulent beef patty topped with melted cheddar cheese,
-            caramelized onions, crispy bacon, and tangy barbecue sauce
-          </p> -->
-            <button class="btn"><a href="contact_us.html" class="text-decoration-none text-dark">Got a Project? Contact
-                Us</a></button>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-lg-3">
-        <div class="card shadow border-0 rounded text-center pop">
-          <img src="image/digital_markeeting.jpg" class="card-img-top" alt="" height="200px">
-          <div class="card-body">
-            <h3 class="card-title fw-bold">Digital Markeeting</h3>
-            <!-- <p class="card-text">
-            Succulent beef patty topped with melted cheddar cheese,
-            caramelized onions, crispy bacon, and tangy barbecue sauce
-          </p> -->
-            <button class="btn"><a href="contact_us.html" class="text-decoration-none text-dark">Got a Project? Contact
-                Us</a></button>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-lg-3">
-        <div class="card shadow border-0 rounded text-center pop">
-          <img src="image/webdev&design.jpg" class="card-img-top" alt="" height="200px">
-          <div class="card-body">
-            <h3 class="card-title fw-bold"> Website Building</h3>
-            <!-- <p class="card-text">
-            Succulent beef patty topped with melted cheddar cheese,
-            caramelized onions, crispy bacon, and tangy barbecue sauce
-          </p> -->
-            <button class="btn"><a href="contact_us.html" class="text-decoration-none text-dark">Got a Project? Contact
-                Us</a></button>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-12 text-center mt-5">
-        <a href="services.html" class="btn btn-sm btn-outline-dark rounded-0 fw-bold shadow-none">More Details About our
-          Services</a>
-      </div>
-    </div>
-  </div>
-  <!-- //===== OUR FACILITY SECTION END =====// -->
+
+
+
+
+
+  
 
 
 
   <!-- //===== BLANK DIV PART START =====// -->
-  <div style="padding: 1px;
-            background-color: #198754;
+  <!-- <div style="padding: 0.5px;
+            /* background-color: #198754; */
+            background-color:gray;
 ">
-  </div>
+  </div> -->
   <!-- //===== BLANK DIV PART END =====// -->
 
 
@@ -206,6 +207,10 @@ require_once("common_content/second_navbar.php");
   <!-- //===== MIDDLE PART START =====// -->
   <div class="second_home bg-white">
     <div class="container">
+    <div class="section-title ps-lg-5">
+          <h2>About us</h2>
+          <p>About Graphical World</p>
+        </div>
       <div class="row featurette">
         <div class="col-md-6 my-5">
           <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded-circle"
@@ -225,15 +230,15 @@ require_once("common_content/second_navbar.php");
           <div class="container">
             <div class="row text-dark">
               <div class="col border-end">
-                <h1 class="text-success">6500+</h1>
+                <h1 class="text-dark">6500+</h1>
                 Project Completed
               </div>
               <div class="col border-end">
-                <h1 class="text-success">5+</h1>
+                <h1 class="text-dark">5+</h1>
                 Expert Worker
               </div>
               <div class="col">
-                <h1 class="text-success">99%</h1>
+                <h1 class="text-dark">99%</h1>
                 Satisfy Customer
               </div>
             </div>
@@ -241,19 +246,61 @@ require_once("common_content/second_navbar.php");
         </div>
       </div>
     </div>
-  </div>
+  </div><br><br><br>
   <!-- //===== MIDDLE PART END =====// -->
 
 
 
 
 
-  <!-- //===== BLANK DIV PART START =====// -->
-  <div style="padding: 1px;
-            background-color: #198754;
-">
+
+
+  
+<!-- //===== PROJECT PART START =====// -->
+  <div class="container px-4 pt-5 mb-5">
+    <!-- Swiper -->
+  <div class="row">
+  <div class="col-lg-4 mt-3">
+  <div class="section-title ps-lg-5">
+          <h2>Portfolio</h2>
+          <p>My creative Work <span class="text-danger font-italic">Latest Project</span></p>
+          <!-- <span class="btn btn-danger">Danger</span> -->
+           <span><a href="portfolio.php" class="btn btn-danger">Our Portfolio</a></span>
+        </div>
+ </div>
+
+<div class="swiper mySwiper col-lg-8">
+<div class="swiper-wrapper mb-5">
+  <div class="swiper-slide bg-white text-center overflow-hidden">
+    <img src="image/invition_card.jpeg" class="w-100 mb-2">
   </div>
-  <!-- //===== BLANK DIV PART END =====// -->
+  <div class="swiper-slide bg-white text-center overflow-hidden">
+    <img src="image/weeding_photography.jpeg" class="w-100 mb-2">
+  </div>
+  <div class="swiper-slide bg-white text-center overflow-hidden">
+    <img src="image/visiting_card_03.jpeg" class="w-100 mb-2">
+  </div>
+  <div class="swiper-slide bg-white text-center overflow-hidden">
+    <img src="image/visiting_card_02.jpeg" class="w-100 mb-2">
+  </div>
+  <div class="swiper-slide bg-white text-center overflow-hidden">
+    <img src="image/visiting_card_02.jpeg" class="w-100 mb-2">
+  </div>
+  <div class="swiper-slide bg-white text-center overflow-hidden">
+    <img src="image/visiting_card_02.jpeg" class="w-100 mb-2">
+  </div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+  </div>
+<!-- Swiper JS -->
+</div><br>
+    <!-- //===== PROJECT PART END=====// -->
+
+
+
+
+
 
 
 
@@ -263,10 +310,14 @@ require_once("common_content/second_navbar.php");
 
 
   <!-- //===== TESTIMONIAL SECTION START =====//  -->
-  <h2 class="mt-5 pt-4 text-center fw-bold h-font">Our Client Feedback</h2>
-  <div class="h-line bg-dark mb-5"></div>
+  <!-- <h2 class="mt-5 pt-4 text-center fw-bold h-font">Our Client Feedback</h2>
+  <div class="h-line bg-dark mb-5"></div> -->
 
   <div class="container mt-5 mb-5">
+  <div class="section-title ps-lg-5 mb-5">
+          <h2>Feedback</h2>
+          <p>Our Client's Feedback</p>
+        </div>
     <!-- Swiper -->
     <div class="swiper swiper-testimonials">
       <div class="swiper-wrapper mb-5">
@@ -516,6 +567,36 @@ require_once("common_content/lower_links.php");
     });
   </script>
 
+  
+
+<!-- **** Swiper Js Code for our project section ***** -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 40,
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    loop: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
 
 </body>
 </html>

@@ -31,7 +31,7 @@ require_once("common_content/second_navbar.php");
 
 
  <!-- //===== PORTFOLIO PART START =====// -->
- <h2 class="mt-5 pt-4 text-center fw-bold h-font">Our Recent Projects</h2>
+ <h2 class="mt-5 pt-4 text-center fw-bold h-font">Our Portfolio</h2>
     <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel perspiciatis porro distinctio,
         hic provident aliquam!</p>
     <div class="h-line bg-dark mb-5"></div>

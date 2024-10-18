@@ -14,4 +14,8 @@
 4. 11/10/2024
        -- Contact us section fully dynamic complete
        --About us section complete (Dashbhboard) 
-       -- Setting section complete (Dashboard)          
+       -- Setting section complete (Dashboard) 
+
+
+5. 18/10/2024       
+       -- Contact section modifyed with a new look with fully dynamic
