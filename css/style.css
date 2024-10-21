@@ -247,7 +247,8 @@
 
 /* ==========// THIS PART IS FOR ALL DETAILS SECTION //=========== */
 .blog_details h5{
-    background: #f44336;
+    /* background: #f44336; */
+    background-color:  #151515;
     color: #fff;
     padding: 7px 0;
     font-size: 16px;

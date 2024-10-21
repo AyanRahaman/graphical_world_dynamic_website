@@ -95,19 +95,16 @@ if(!empty($_SESSION['login'])){
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div><br><br>
                     <!-- Table Element -->
                     <div class="card border-0">
-                        <div class="card-header">
-                            <h5 class="card-title">
-                                Basic Table
-                            </h5>
-                            <h6 class="card-subtitle text-muted">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum ducimus,
-                                necessitatibus reprehenderit itaque!
-                            </h6>
+                        <div class="card-header bg-white shadow">
+                        <form class="d-flex mb-2" action="search.php" method="GET">
+                            <input class="form-control rounded-0 shadow-none border border-dark" name="search_text"  placeholder="Search by Name,Email,Phone Number" aria-label="Search">
+                            <button class="btn btn-outline-dark rounded-0 border border-dark shadow-none"name="submit" type="submit">Search</button>
+                        </form>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body shadow bg-white">
                             <table class="table">
                                 <thead>
                                     <tr>

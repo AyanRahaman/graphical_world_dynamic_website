@@ -27,6 +27,13 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
+                        <a href="contact_us.php" class="sidebar-link">
+                            <!-- <i class="fa-solid fa-folder-closed pe-2"></i> -->
+                            <i class="fas fa-map-marker-alt pe-2"></i>
+                            Contact us
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
                             aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
                             Pages

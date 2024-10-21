@@ -55,9 +55,9 @@ require_once("common_content/second_navbar.php");
           </p> 
           </p><br>
           <hr>
-          <h2 class="fw-bold">OUR SERVICES</h2>
-          <!-- <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly
-            repetitive body text used throughout. This is an example unordered list:</p> -->
+          <div class="blog_details">
+            <h5>Our Services</h5>
+          </div>
           <div class="our_services">
             <div class="row">
               <div class="col-lg-4">
@@ -117,22 +117,7 @@ require_once("common_content/second_navbar.php");
           </div>
 
 
-          <table class="table">
-            <tbody>
-              <tr>
-                <td colspan="2">Web Design & Development</td>
-                <td>₹100</td>
-              </tr>
-              <tr>
-                <td colspan="2">Mobile App Development</td>
-                <td>₹100</td>
-              </tr>
-              <tr>
-                <td colspan="2">Web Application</td>
-                <td>₹100</td>
-              </tr>
-            </tbody>
-          </table>
+          
 
           <nav class="blog-pagination mt-5" aria-label="Pagination">
             <a href="contact_us.php"><button type="button" class="btn btn-info">
