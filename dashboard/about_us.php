@@ -65,9 +65,11 @@ if (!empty($_SESSION['login'])) {
                                        $sql = "SELECT * FROM about_us";
                                        $stmt = $connectingDB->query($sql);
                                        while ($Data = $stmt->fetch()) {
+                                           $id = $Data["id"];
                                            $title1 = $Data["title1"];
                                            $title2 = $Data["title2"];
                                            $body = $Data["body"];
+                                           $image2 = $Data["image"];
                                        }
                                        ?>
                             <div class="card-body">
@@ -76,15 +78,34 @@ if (!empty($_SESSION['login'])) {
                                     <!-- ==Button trigger modal== -->
                                     <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#about-s">
-                                        <i class="bi bi-pencil-square"></i> Edit
+                                        <i class="fas fa-edit"></i> Edit
                                     </button>
                                 </div>
-                                <h6 class="card-subtitle mb-1 fw-bold">About Us Title - 1</h6>
-                                <p class="card-text" id="site_title"><?php echo $title1; ?></p>
-                                <h6 class="card-subtitle mb-1 fw-bold">About Us Title - 2</h6>
-                                <p class="card-text" id="site_title"><?php echo $title2; ?></p>
+                                <div class="row mb-3">
+                                    <div class="col-lg-6">
+                                        <h6 class="card-subtitle mb-1 fw-bold">About Us Title - 1</h6>
+                                        <p class="card-text" id="site_title"><?php echo $title1; ?></p>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <h6 class="card-subtitle mb-1 fw-bold">About Us Title - 2</h6>
+                                        <p class="card-text" id="site_title"><?php echo $title2; ?></p>
+                                    </div>
+                                </div>
                                 <h6 class="card-subtitle mb-1 fw-bold">About Us Body</h6>
                                 <p class="card-text" id="site_about"><?php echo $body; ?></p>
+                                <h6 class="card-subtitle mb-1 fw-bold">image</h6>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                    <div class="card rounded-0" style="width: 18rem;">
+                                        <img src="images/<?php echo $image2; ?>" class="" alt="<?php echo $image2 ?>">
+                                        <div class="card-body">
+                                            <a href="about_us_img_change.php?id=<?php echo $id; ?>" class="btn btn-dark rounded-0">Change Image</a>
+                                        </div>
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                
                             </div>
                             <!-- ===About Us Section End===  -->
                             <!--===About Us Section Modal start===-->
@@ -187,7 +208,7 @@ if (!empty($_SESSION['login'])) {
                             <!-- ==Button trigger modal== -->
                             <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
                                 data-bs-target="#general-s">
-                                <i class="bi bi-pencil-square"></i> Add New Team Member
+                                <i class="fas fa-edit"></i> Add New Team Member
                             </button>
                         </div>
                         <div class="card-body">

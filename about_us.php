@@ -39,11 +39,7 @@ require_once("common_content/second_navbar.php");
 
  <div class="container">
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-    <div class="col-10 col-sm-8 col-lg-6">
-      <img src="image/studio.jpg" class="d-block mx-lg-auto img-fluid rounded" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
-    </div>
-    <div class="col-lg-6">
-    <?php
+  <?php
          require_once("dashboard/partials/DBconnect.php");
                                       
                                        
@@ -53,8 +49,13 @@ require_once("common_content/second_navbar.php");
                                            $title1 = $Data["title1"];
                                            $title2 = $Data["title2"];
                                            $body = $Data["body"];
+                                           $image2 = $Data["image"];
                                        }
                                        ?>
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img src="dashboard/images/<?php echo $image2; ?>" class="d-block mx-lg-auto img-fluid rounded" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+    </div>
+    <div class="col-lg-6">
       <h1 class="display-5 text-uppercase fw-bold lh-1 mb-3"><?php echo $title1; ?> - <span class="text-warning"><?php echo $title2; ?></span></h1>
       <p class="lead"><?php echo $body; ?></p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">

@@ -21,12 +21,6 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="about.php" class="sidebar-link">
-                            <i class="fa-solid fa-list pe-2"></i>
-                            About Us
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
                         <a href="about_us.php" class="sidebar-link">
                             <i class="fa-solid fa-folder-closed pe-2"></i>
                             About us
