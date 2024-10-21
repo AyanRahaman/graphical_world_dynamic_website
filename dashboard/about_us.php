@@ -324,7 +324,7 @@ if (!empty($_SESSION['login'])) {
                                                 required />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label fw-bold">Image</label>
+                                            <label class="form-label fw-bold">Image (Image size must be in 600x600px)</label>
                                             <input type="file" name="image" id="site_title_inp"
                                                 class="form-control shadow-none" required />
                                         </div>
@@ -333,10 +333,15 @@ if (!empty($_SESSION['login'])) {
                                             <select class="form-select shadow-none" id="inputGroupSelect01"
                                                 name="designation" required>
                                                 <option selected>Choose Designation ...</option>
-                                                <option value="Digital Markeeting">Digital Markeeting</option>
-                                                <option value="Photography">Photography</option>
-                                                <option value="Graphics Design">Graphics Design</option>
-                                                <option value="Website Building">Website Building</option>
+                                                <?php
+                                                    $sql3 = "SELECT * FROM services";
+                                                    $stmt3 = $connectingDB->query($sql3);
+                                                    while($Data3 = $stmt3->fetch()){
+                                                        $s_name = $Data3["s_name"];
+                                                    
+                                                    ?>
+                                                <option value="<?php echo $s_name; ?>"><?php echo $s_name; ?></option>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                         <div class="mb-3">

@@ -101,7 +101,20 @@ require_once("common_content/second_navbar.php");
           <img src="dashboard/images/<?php echo $image; ?>" class="card-img-top" alt="" height="250">
           <div class="card-body">
           <h5 class="card-title fw-bold text-center text-uppercase"><?php echo $name; ?></h5>
-          <p><?php echo $designation; ?></p><hr>
+          <p><?php 
+          if($designation == "Graphics Design"){
+            echo "Graphics Designer";
+          }
+          elseif($designation == "Photography"){
+            echo "Photographer";
+          }
+          elseif($designation == "Web Design & Development"){
+            echo "Developer";
+          }
+          else{
+            echo "Digital Marketer";
+          }
+          ?></p><hr>
             <p class="card-text text-center"><small class="text-muted">
               <a href="<?php echo $twitter; ?>" target="_blank" class="text-decoration-none text-dark fs-5 pe-4">
                 <i class="fab fa-twitter me-1 border border-dark border-2 p-2 rounded"></i>
@@ -112,9 +125,6 @@ require_once("common_content/second_navbar.php");
               <a href="<?php echo $facebook; ?>" target="_blank" class="text-decoration-none text-dark fs-5 pe-4">
                 <i class="fab fa-facebook me-1 border border-dark border-2 p-2 rounded"></i>
               </a>
-              <!-- <a href="" class="text-decoration-none text-dark fs-5 pe-4">
-                <i class="fab fa-whatsapp me-1 border border-dark p-2"></i>
-              </a>   -->
             </small></p>
           </div>
         </div>
