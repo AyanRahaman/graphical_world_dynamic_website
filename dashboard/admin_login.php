@@ -100,7 +100,7 @@ if(isset($_POST["submit"]))
                 } ?>
                   <br>
                   <!-- <label for="password" class="fw-bold py-2">password :</label> -->
-                  <input type="text" name="password" class="form-control shadow-none py-2" placeholder="Admin Password" />
+                  <input type="password" name="password" class="form-control shadow-none py-2" placeholder="Admin Password" />
                   <?php if (isset($_POST["submit"])) {
                                 echo "<span class='text-danger'>" . $empty_password . "</span>";
                 } ?>

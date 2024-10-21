@@ -19,3 +19,6 @@
 
 5. 18/10/2024       
        -- Contact section modifyed with a new look with fully dynamic
+
+6. 21/10/204
+       -- About us page fully dunamic complete

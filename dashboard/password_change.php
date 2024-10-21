@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 //for calling the redirect fuction
 require_once("extra_content/function.php");
@@ -10,9 +10,6 @@ if(!empty($_SESSION['login'])){
     else{
         Redirect_to("admin_login.php");
     }
-
-
-session_start();
 //for calling the redirect fuction
 require_once("extra_content/function.php");
 // for making a connection to the database 
@@ -52,7 +49,7 @@ if (isset($_POST["submit"])) {
                 $result = $connectingDB->query($sql);
 
                 if ($result) {
-                echo "<script>alert('password change succesfully!');document.location='dashboard.php'</script>";
+                echo "<script>alert('password change succesfully!');document.location='logout.php'</script>";
                 } else {
                     echo "<script>alert('Something went wrong');</script>";
                 }

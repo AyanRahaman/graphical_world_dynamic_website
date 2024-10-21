@@ -50,8 +50,14 @@ if(!empty($_SESSION['login'])){
 
 
 
-<!-- ===== //ABOUT US SECTION PART START// ===== -->
-            <div class="col-md-12 p-4 col-lg-12">
+   
+ 
+
+
+
+
+<!-- ===== //ABOUT GRAPHICAL WORLD SECTION START// ===== -->
+<div class="col-md-12 p-4 col-lg-12">
                         <div class="p-3 border border-dark bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                            
                             <!-- ===About Us Section Start===  -->
@@ -68,19 +74,36 @@ if(!empty($_SESSION['login'])){
                                        ?>
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between mb-3">
-                                    <h4 class="card-title m-0 fw-bold fst-italic text-success">About Us</h4>
+                                    <h4 class="card-title m-0 fw-bold fst-italic text-success">About Graphical World</h4>
                                     <!-- ==Button trigger modal== -->
                                     <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#general-s">
                                         <i class="bi bi-pencil-square"></i> Edit
                                     </button>
                                 </div>
-                                <h6 class="card-subtitle mb-1 fw-bold">About Us Title - 1</h6>
+                                <h6 class="card-subtitle mb-1 fw-bold">Title</h6>
                                 <p class="card-text" id="site_title"><?php echo $title1; ?></p>
-                                <h6 class="card-subtitle mb-1 fw-bold">About Us Title - 2</h6>
+                                <h6 class="card-subtitle mb-1 fw-bold">Heading</h6>
+                                <p class="card-text" id="site_title"><?php echo $title1; ?></p>
+                                <h6 class="card-subtitle mb-1 fw-bold">Body</h6>
                                 <p class="card-text" id="site_title"><?php echo $title2; ?></p>
-                                <h6 class="card-subtitle mb-1 fw-bold">About Us Body</h6>
-                                <p class="card-text" id="site_about"><?php echo $body; ?></p>
+                                <div class="container p-5">
+                                <div class="row">
+                                    <div class="col-lg-4 mb-3">
+                                        <h6 class="card-subtitle mb-1 fw-bold">About Us Body</h6>
+                                        <p class="card-text" id="site_about"><?php echo $title1; ?></p>
+                                    </div>
+                                    <div class="col-lg-4 mb-3">
+                                        <h6 class="card-subtitle mb-1 fw-bold">About Us Body</h6>
+                                        <p class="card-text" id="site_about"><?php echo $title1; ?></p>
+                                    </div>
+                                    <div class="col-lg-4 mb-3">
+                                        <h6 class="card-subtitle mb-1 fw-bold">About Us Body</h6>
+                                        <p class="card-text" id="site_about"><?php echo $title1; ?></p>
+                                    </div>
+                                </div>
+                                </div>
+                              
                             </div>
                             <!-- ===About Us Section End===  -->
                             <!--===About Us Section Modal start===-->
@@ -165,7 +188,7 @@ if(!empty($_SESSION['login'])){
             <!-- ===About Us Section ModaL End=== -->
                         </div>
                     </div>
-<!-- ===== //ABOUT US SECTION END// ===== -->            
+<!-- ===== //ABOUT GRAPHICAL WORLD SECTION END// ===== -->      
 
 
 
