@@ -121,25 +121,103 @@ if(!empty($_SESSION['login'])){
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                         require_once("partials/DBconnect.php");
+
+                                         /*Pagination part start*/
+                                  $sqql="SELECT * FROM client_message";
+                                  $querry = $connectingDB->query($sqql);
+                                  $Data=$querry->rowCount();
+                              
+                                  $devided_num = ($Data/10)+1;
+                              
+                                  if(isset($_GET["pageno"])){
+                                      $get_pageno = $_GET["pageno"];
+                                      $offset = ($get_pageno-1)*10;
+                              
+                                      $get_pageno_dec = $get_pageno - 1;
+                                      $get_pageno_inc = $get_pageno + 1;
+                                  
+                                  }
+                                  else{
+                                      $offset = 0;
+                                      $get_pageno = 0;
+                                      $get_pageno_dec = 0;
+                                      $get_pageno_inc = 2;
+                                  }
+                              /*Pagination part end*/
+
+
+                                         $sql="SELECT * FROM client_message ORDER BY id DESC LIMIT 10 OFFSET $offset";
+                                         $stmt = $connectingDB->query($sql);
+                                         while($Data = $stmt->fetch()){
+                                             $id = $Data["id"];
+                                             $name = $Data["name"];
+                                             $email = $Data["email"];
+                                             $phone = $Data["phone"];
+                                             $message = $Data["message"];
+                                             $status = $Data["status"];
+                                    ?>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
+                                        <th scope="row"><?php echo $id; ?></th>
+                                        <td><?php echo $name; ?></td>
+                                        <td><?php echo $email; ?></td>
+                                        <td><?php echo $phone; ?></td>
+                                        <td><?php echo $message; ?></td>
+                                        <td><a href="status_change.php?id=<?php echo $id; ?>">
+                                        <?php
+                                                    if($status == 0){
+                                                    
+                                                    ?>
+                                                <button class="btn btn-danger shadow-none">Incomplete</button>
+                                                <?php
+                                                    }
+                                                    else{
+                                                    ?>
+                                                <button class="btn btn-success shadow-none">Complate</button>
+                                                <?php
+                                                    }
+                                        ?>
+                                        <td><a href="delete_query.php?id=<?php echo $id; ?>"><button class="btn btn-danger shadow-none">delete</button></a></td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td colspan="2">Larry the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
+                                    <?php
+                                        }
+                                    ?>
                                 </tbody>
-                            </table>
+                            </table><br>
+                     <?php
+                    //  ===== pagination start =====
+                        if($get_pageno_dec < 1){
+                            echo "<span class='bg-dark text-white py-2 px-3'><i class='fas fa-arrow-left'></i></span>";
+                        }
+                        else{
+                            echo "<a class='text-decoration-none' href='dashboard.php?pageno=$get_pageno_dec'>
+                        <span class='bg-dark text-white py-2 px-3'><i class='fas fa-arrow-left'></i></span>
+                        </a>";
+                        }
+                        
+                        for($x=1; $x<$devided_num; $x++){
+                            if($x == $get_pageno){
+                                echo "<span class='bg-dark text-white py-2 px-3 m-1'>$x</span>";
+                            }
+                            else{
+                                echo "<span class='bg-dark py-2 px-3 m-1'>
+                                <a class='text-decoration-none  text-white' href='dashboard.php?pageno=$x' class='text-white'> $x </a></span>";
+                        
+                            }
+                        }
+                        
+                        if($get_pageno_inc > $devided_num){
+                            echo "<span class='bg-dark text-white py-2 px-3'><i class='fas fa-arrow-right'></i></span>";
+                        }
+                        else{
+                            echo "<a class='text-decoration-none bg-dark text-white  py-2 px-3' href='dashboard.php?pageno=$get_pageno_inc'>
+                        <span '><i class='fas fa-arrow-right'></i></span>
+                        </a>";
+                        }
+                        //  ===== pagination End =====
+                        ?>
+                     
                         </div>
                     </div>
                 </div>
