@@ -78,11 +78,22 @@ if(isset($_POST["submit"]))
 
 <body>
     
-<div class="bg-dark text-white p-4 text-center" id="heading">
+<!-- <div class="bg-dark text-white p-4 text-center" id="heading">
 <h2 class="fw-bold">Graphical World</h2>
-</div>
+</div> -->
 
-
+<nav class="navbar navbar-expand-lg navbar-light px-lg-3 py-lg-2" style="background-color: #151515;">
+        <div class="container">
+            <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="../index.php">
+                <h4 class="text-white">Admin Login</h4>
+            </a>
+            <div class="d-flex text-white">
+                <!-- static backdrop modal in bootstrap start -->
+                <a href="../index.php" style="color: white; text-decoration: none;">HOME</a>&nbsp; / Admin Login
+                <!-- static backdrop modal in bootstrap End -->
+            </div>
+        </div>
+    </nav>
         
 <!-- ===== Form creating part start ===== -->
 <section>

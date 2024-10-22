@@ -31,10 +31,10 @@ require_once("upper_links.php");
         </ul>
         <span class="navbar-text">
           <button type="button" class=" border border-warning border-2  mx-1 btn btn-outline-warning">
-            <a href="contact_us.html" class="text-decoration-none">Register</a>
+            <a href="" class="text-decoration-none">Register</a>
           </button>
           <button type="button" class="btn border border-warning border-2  mx-1 btn btn-outline-warning">
-            <a href="contact_us.html" class="text-decoration-none">Login</a>
+            <a href="dashboard/admin_login.php" class="text-decoration-none">Login</a>
           </button>
         </span>
       </div>
