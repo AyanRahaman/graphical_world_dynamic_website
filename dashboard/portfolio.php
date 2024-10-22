@@ -85,14 +85,38 @@ if (!empty($_SESSION['login'])) {
                                 </thead>
                                 <tbody>
                                     <?php
-                                    require_once("partials/DBconnect.php");
-                                    $sql = "SELECT * FROM portfolio ORDER BY id DESC";
+                                   require_once("partials/DBconnect.php");
 
-                                    $stmt = $connectingDB->query($sql);
-                                    while ($Data = $stmt->fetch()) {
-                                        $id = $Data["id"];
-                                        $image = $Data["image"];
-                                        $name = $Data["name"];
+                                   /*Pagination part start*/
+                            $sqql="SELECT * FROM portfolio";
+                            $querry = $connectingDB->query($sqql);
+                            $Data=$querry->rowCount();
+                        
+                            $devided_num = ($Data/15)+1;
+                        
+                            if(isset($_GET["pageno"])){
+                                $get_pageno = $_GET["pageno"];
+                                $offset = ($get_pageno-1)*15;
+                        
+                                $get_pageno_dec = $get_pageno - 1;
+                                $get_pageno_inc = $get_pageno + 1;
+                            
+                            }
+                            else{
+                                $offset = 0;
+                                $get_pageno = 0;
+                                $get_pageno_dec = 0;
+                                $get_pageno_inc = 2;
+                            }
+                        /*Pagination part end*/
+
+
+                                   $sql="SELECT * FROM portfolio ORDER BY id DESC LIMIT 15 OFFSET $offset";
+                                   $stmt = $connectingDB->query($sql);
+                                   while($Data = $stmt->fetch()){
+                                       $id = $Data["id"];
+                                       $image = $Data["image"];
+                                       $name = $Data["name"];
                                         ?>
                                         <tr>
                                             <th scope="row"><?php echo $id; ?></th>
@@ -110,7 +134,40 @@ if (!empty($_SESSION['login'])) {
                                     }
                                     ?>
                                 </tbody>
-                            </table>
+                            </table><br>
+
+                            <?php
+                    //  ===== pagination start =====
+                        if($get_pageno_dec < 1){
+                            echo "<span class='bg-dark text-white py-2 px-3'><i class='fas fa-arrow-left'></i></span>";
+                        }
+                        else{
+                            echo "<a class='text-decoration-none' href='portfolio.php?pageno=$get_pageno_dec'>
+                        <span class='bg-dark text-white py-2 px-3'><i class='fas fa-arrow-left'></i></span>
+                        </a>";
+                        }
+                        
+                        for($x=1; $x<$devided_num; $x++){
+                            if($x == $get_pageno){
+                                echo "<span class='bg-dark text-white py-2 px-3 m-1'>$x</span>";
+                            }
+                            else{
+                                echo "<span class='bg-dark py-2 px-3 m-1'>
+                                <a class='text-decoration-none  text-white' href='portfolio.php?pageno=$x' class='text-white'> $x </a></span>";
+                        
+                            }
+                        }
+                        
+                        if($get_pageno_inc > $devided_num){
+                            echo "<span class='bg-dark text-white py-2 px-3'><i class='fas fa-arrow-right'></i></span>";
+                        }
+                        else{
+                            echo "<a class='text-decoration-none bg-dark text-white  py-2 px-3' href='portfolio.php?pageno=$get_pageno_inc'>
+                        <span '><i class='fas fa-arrow-right'></i></span>
+                        </a>";
+                        }
+                        //  ===== pagination End =====
+                        ?>
                         </div>
                     </div>
 
@@ -161,7 +218,7 @@ if (!empty($_SESSION['login'])) {
                                     </div>
                                     <div class="modal-body">
                                     <div class="mb-3">
-                                            <label class="form-label fw-bold">Image (Image size must be in 600x600px)</label>
+                                            <label class="form-label fw-bold">Image (Image size must be in 1500x1000px)</label>
                                             <input type="file" name="image" id="site_title_inp"
                                                 class="form-control shadow-none" required />
                                         </div>

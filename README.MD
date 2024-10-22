@@ -22,3 +22,6 @@
 
 6. 21/10/204
        -- About us page fully dunamic complete
+
+7. 22/10/2024
+       -- Portfolio page fully dynamic complete       
