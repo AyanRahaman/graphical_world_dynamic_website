@@ -46,11 +46,11 @@ require_once("common_content/second_navbar.php");
         $query = $connectingDB->query($sql1);
         $Data=$query->rowCount();
         
-        $devided_num = ($Data/15)+1;
+        $devided_num = ($Data/30)+1;
         
         if(isset($_GET["pageno"])){
           $get_pageno = $_GET["pageno"];
-          $offset = ($get_pageno-1)*15;
+          $offset = ($get_pageno-1)*30;
         
           $get_pageno_dec = $get_pageno - 1;
           $get_pageno_inc = $get_pageno + 1;
@@ -65,7 +65,7 @@ require_once("common_content/second_navbar.php");
         /*****Pagination part end*****/
 
 
-        $sql = "SELECT * FROM portfolio ORDER BY id DESC LIMIT 15 OFFSET $offset";
+        $sql = "SELECT * FROM portfolio ORDER BY id DESC LIMIT 30 OFFSET $offset";
         $stmt = $connectingDB->query($sql);
         while($Data = $stmt->fetch()){
             $image = $Data["image"];

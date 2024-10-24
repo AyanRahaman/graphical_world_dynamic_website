@@ -9,14 +9,6 @@
 
 
 /* //===== LANDING PAGE START =====// */
-.hero {
-  background-image: url("../image/carosoul_02.jpg");
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  position: relative;
-  z-index: 2;
-}
 .hero h1{
   font-size: 62px;
   color: white;

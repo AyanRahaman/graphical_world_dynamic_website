@@ -10,6 +10,27 @@ require_once("common_content/upper_links.php");
 <!-- ===============================================================================================================  -->
 
 <title>Graphical World</title>
+
+<style>
+<?php
+// for landing page image --->
+ require_once("dashboard/partials/DBconnect.php");
+ $sql = "SELECT * FROM landing_page_image";
+ $stmt = $connectingDB->query($sql);
+ while ($Data = $stmt->fetch()) {
+     $imagge = $Data["image"];
+ }
+?>
+/* for landing page style */
+.hero {
+  background-image: url("dashboard/images/<?php echo $imagge; ?>");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 2;
+}
+</style>
 </head>
 
 
@@ -36,28 +57,22 @@ require_once("common_content/second_navbar.php");
 
   <!-- //===== LANDING PAGE START =====// -->
   <?php
-         require_once("dashboard/partials/DBconnect.php");
-         $sql = "SELECT * FROM contact_us";
+         $sql = "SELECT * FROM landing_page";
          $stmt = $connectingDB->query($sql);
          while ($Data = $stmt->fetch()) {
-             $address = $Data["address"];
-             $heading_title = $Data["heading"];
-             $ph1 = $Data["ph1"];
-             $ph2 = $Data["ph2"];
-             $email = $Data["email"];
-             $g_map = $Data["g_map"];
+             $title = $Data["title"];
+             $body = $Data["body"];
+             $marquee = $Data["marquee"];
          }
-         
          ?>
   <div class="hero vh-100 d-flex align-items-center" id="home">
       <div class="container">
           <div class="row">
               <div class="col-lg-7 mx-auto text-center">
-                  <h1 class="display-4 text-white">WELCOME TO - GRAPHICAL WORLD</h1>
-                  <p class="text-white my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quia
-                      sequi eius. Quas, totam aliquid. Repudiandae reiciendis vel excepturi ipsa voluptate dicta!</p>
-                  <a href="#" class="btn me-2 btn-primary p-3 rounded-0">Get Started</a>
-                  <a href="#" class="btn btn-outline-light p-3 rounded-0">My Portfolio</a>
+                  <h1 class="display-4 text-white text-uppercase"><?php echo $title; ?></h1>
+                  <p class="text-white my-3"><?php echo $body; ?></p>
+                  <a href="contact_us.php" class="btn me-2 btn-primary p-3 rounded-0">Get Started</a>
+                  <a href="portfolio.php" class="btn btn-outline-light p-3 rounded-0">My Portfolio</a>
               </div>
           </div>
       </div>
@@ -74,13 +89,8 @@ require_once("common_content/second_navbar.php");
     <marquee behavior="" direction="">
       <h5 class="text-white p-1">
         <i class="fa-solid fa-star text-warning"></i>
-        Walk into the digital market with graphical world
+       <?php echo $marquee; ?>
         <i class="fa-solid fa-star text-warning"></i>
-        বিয়েতে অ্যালবাম বানান। আপনার সুন্দর মুহূর্তের ছবিগুলো সারা জীবন সাথে রাখুন। অল্প খরচে আমাদের সঙ্গে
-        <i class="fa-solid fa-star text-warning"></i>
-        <!-- 7029979185 or submit the contact us form or visit our campus. Address: NH-60, Sagar, Bandhersole Bus
-          Stop, West
-          Bengal 731124 -->
       </h5>
     </marquee>
   </div><br>
@@ -98,31 +108,79 @@ require_once("common_content/second_navbar.php");
 
         <div class="row p-lg-5">
             <div class="col-lg-6 col-md-6 mb-4">
+              <?php
+                 $sql = "SELECT * FROM s_content WHERE id = 1 ";
+                 $stmt = $connectingDB->query($sql);
+                 while ($Data = $stmt->fetch()) {
+                    $image = $Data["image"];
+                    $about = $Data["about"];
+                    $h1 = $Data["h1"];
+                    $h2 = $Data["h2"];
+                    $type = $Data["type"];
+
+                 }
+              ?>
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-chart-simple fs-2 rounded p-3 bg-warning"></i>
-                    <a href="digital-markeeting-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold">Digital Markeeting</h4></a>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus ut, aperiam accusantium illum vel eum totam atque ex cumque corrupti.</p>
+                    <a href="digital-markeeting-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type; ?></h4></a>
+                    <p><?php echo $about; ?></p>
                  </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-4">
+            <?php
+                        $sql = "SELECT * FROM s_content WHERE id = 2 ";
+                        $stmt = $connectingDB->query($sql);
+                        while ($Data = $stmt->fetch()) {
+                           $image2 = $Data["image"];
+                           $about2 = $Data["about"];
+                           $h12 = $Data["h1"];
+                           $h22 = $Data["h2"];
+                           $type2 = $Data["type"];
+
+                        }
+               ?>
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-camera-rotate fs-2 rounded p-3 bg-warning"></i>
-                    <a href="photography-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold">Photography</h4></a>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus ut, aperiam accusantium illum vel eum totam atque ex cumque corrupti.</p>
+                    <a href="photography-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type2; ?></h4></a>
+                    <p><?php echo $about2; ?></p>
                  </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-4">
+            <?php
+                        $sql = "SELECT * FROM s_content WHERE id = 3 ";
+                        $stmt = $connectingDB->query($sql);
+                        while ($Data = $stmt->fetch()) {
+                           $image3 = $Data["image"];
+                           $about3 = $Data["about"];
+                           $h13 = $Data["h1"];
+                           $h23 = $Data["h2"];
+                           $type3 = $Data["type"];
+
+                        }
+               ?>
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-wand-magic-sparkles fs-2 rounded p-3 bg-warning"></i>
-                    <a href="graphics-design-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold">Graphic Design</h4></a>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus ut, aperiam accusantium illum vel eum totam atque ex cumque corrupti.</p>
+                    <a href="graphics-design-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type3; ?></h4></a>
+                    <p><?php echo $about3; ?></p>
                  </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-4">
+            <?php
+                        $sql = "SELECT * FROM s_content WHERE id = 4 ";
+                        $stmt = $connectingDB->query($sql);
+                        while ($Data = $stmt->fetch()) {
+                           $image4 = $Data["image"];
+                           $about4 = $Data["about"];
+                           $h14 = $Data["h1"];
+                           $h24 = $Data["h2"];
+                           $type4 = $Data["type"];
+
+                        }
+               ?>
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-earth-oceania fs-2 rounded p-3 bg-warning"></i>
-                    <a href="webdev-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold">Wesite Building</h4></a>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus ut, aperiam accusantium illum vel eum totam atque ex cumque corrupti.</p>
+                    <a href="webdev-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type4; ?></h4></a>
+                    <p><?php echo $about4; ?></p>
                  </div>
             </div>
         </div>
@@ -144,11 +202,25 @@ require_once("common_content/second_navbar.php");
 
 
   <!-- //===== MIDDLE PART START =====// -->
+  <?php
+         $sql = "SELECT * FROM choose_us";
+         $stmt = $connectingDB->query($sql);
+         while ($Data = $stmt->fetch()) {
+             $small_title = $Data["small_title"];
+             $big_title = $Data["big_title"];
+             $boddy = $Data["body"];
+             $p_completed = $Data["p_completed"];
+             $e_workers = $Data["e_workers"];
+             $s_customer = $Data["s_customer"];
+
+
+         }
+         ?>
   <div class="second_home bg-white">
     <div class="container">
     <div class="section-title ps-lg-5">
           <h2>About us</h2>
-          <p>About Graphical World</p>
+          <p>Why Choose Us</p>
         </div>
       <div class="row featurette">
         <div class="col-md-6 my-5">
@@ -157,27 +229,25 @@ require_once("common_content/second_navbar.php");
           <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"></rect><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg> -->
         </div>
         <div class="col-md-6 my-5">
-          <span class="badge rounded-pill bg-secondary mt-5 p-2 mb-2">The best Cleaning Serivice Solution</span>
+          <span class="badge rounded-pill bg-secondary mt-5 p-2 mb-2"><?php echo $small_title; ?></span>
           <h1 class="featurette-heading text-dark fw-bold" style="font-family: 'Bebas Neue', sans-serif;">
-            Your Top Choice
-            <span class="text-warning">For Digital Work Designing and Graphic</span>
+            <span class="text-warning"><?php echo $big_title; ?></span>
           </h1>
           <p class="lead text-muted">
-            Some great placeholder content for the first featurette here.
-            Imagine some exciting prose here.
+          <?php echo $boddy; ?>
           </p>
           <div class="container">
             <div class="row text-dark">
               <div class="col border-end">
-                <h1 class="text-dark">6500+</h1>
+                <h1 class="text-dark"><?php echo $p_completed; ?>+</h1>
                 Project Completed
               </div>
               <div class="col border-end">
-                <h1 class="text-dark">5+</h1>
+                <h1 class="text-dark"><?php echo $e_workers; ?>+</h1>
                 Expert Worker
               </div>
               <div class="col">
-                <h1 class="text-dark">99%</h1>
+                <h1 class="text-dark"><?php echo $s_customer; ?>%</h1>
                 Satisfy Customer
               </div>
             </div>
@@ -210,10 +280,20 @@ require_once("common_content/second_navbar.php");
 
 <div class="swiper mySwiper col-lg-8">
 <div class="swiper-wrapper mb-5">
+  <?php
+      $sql = "SELECT * FROM portfolio ORDER BY id DESC LIMIT 10";
+      $stmt = $connectingDB->query($sql);
+      while($Data = $stmt->fetch()){
+          $image = $Data["image"];
+          // $name = $Data["name"];
+  ?>
   <div class="swiper-slide bg-white text-center overflow-hidden">
-    <img src="image/invition_card.jpeg" class="w-100 mb-2">
+    <img src="dashboard/images/<?php echo $image; ?>" class="w-100 mb-2">
   </div>
-  <div class="swiper-slide bg-white text-center overflow-hidden">
+  <?php
+      }
+  ?>
+  <!-- <div class="swiper-slide bg-white text-center overflow-hidden">
     <img src="image/weeding_photography.jpeg" class="w-100 mb-2">
   </div>
   <div class="swiper-slide bg-white text-center overflow-hidden">
@@ -227,7 +307,7 @@ require_once("common_content/second_navbar.php");
   </div>
   <div class="swiper-slide bg-white text-center overflow-hidden">
     <img src="image/visiting_card_02.jpeg" class="w-100 mb-2">
-  </div>
+  </div> -->
 </div>
 <div class="swiper-pagination"></div>
 </div>

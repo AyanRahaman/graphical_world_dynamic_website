@@ -46,7 +46,7 @@ if(!empty($_SESSION['login'])){
               $searchQueryParameter = $_GET["id"];
               global $connectingDB;
 
-               $sql="SELECT * FROM image_slider WHERE id='$searchQueryParameter'";
+               $sql="SELECT * FROM landing_page_image WHERE id='$searchQueryParameter'";
 
             $stmt=$connectingDB->query($sql);
 
@@ -77,7 +77,7 @@ if(!empty($_SESSION['login'])){
                     $old_image = $_POST["old_image"];
 
                     
-                    $sql = "UPDATE image_slider SET image = '$image' WHERE id='$searchQueryParameter'";
+                    $sql = "UPDATE landing_page_image SET image = '$image' WHERE id='$searchQueryParameter'";
                     $result=$connectingDB->query($sql);  
                     
                     $path = 'images/'. $old_image;
@@ -96,7 +96,7 @@ if(!empty($_SESSION['login'])){
                     else{
                         $image = $_POST["old_image"];
 
-                        $sql = "UPDATE image_slider SET image = '$image' WHERE id='$searchQueryParameter'";
+                        $sql = "UPDATE landing_page_image SET image = '$image' WHERE id='$searchQueryParameter'";
                         $result=$connectingDB->query($sql);  
     
                                    

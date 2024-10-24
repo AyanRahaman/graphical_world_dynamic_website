@@ -5,7 +5,7 @@ require_once("upper_links.php");
  <nav class="navbar navbar-expand-lg navbar-dark shadow sticky-top" style="background-color: black">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.php">
-        <img src="image/logo.jpg" alt="logo" class="img-fluid mx-auto rounder">
+        <img src="image/logo.png" alt="logo" class="img-fluid mx-auto rounder">
       </a>
       <button class="navbar-toggler shadow-sm" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,10 +30,10 @@ require_once("upper_links.php");
           </li>
         </ul>
         <span class="navbar-text">
-          <button type="button" class=" border border-warning border-2  mx-1 btn btn-outline-warning">
+          <button type="button" class=" border border-warning border-2 shadow-none  mx-1 btn btn-outline-warning">
             <a href="" class="text-decoration-none">Register</a>
           </button>
-          <button type="button" class="btn border border-warning border-2  mx-1 btn btn-outline-warning">
+          <button type="button" class="btn border border-warning border-2 shadow-none  mx-1 btn btn-outline-warning">
             <a href="dashboard/admin_login.php" class="text-decoration-none">Login</a>
           </button>
         </span>

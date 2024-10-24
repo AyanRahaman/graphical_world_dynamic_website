@@ -39,16 +39,28 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
+                        <a href="choose_us.php" class="sidebar-link">
+                        <i class="fa-solid fa-file-shield pe-2"></i>
+                            Choose Us
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
                             aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
-                            Pages
+                            services
                         </a>
                         <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Page 1</a>
+                                <a href="graphics_design.php" class="sidebar-link">Graphics Design</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Page 2</a>
+                                <a href="website_development.php" class="sidebar-link">Website Development</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="digital_markeeting.php" class="sidebar-link">Digital Markeeting</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="wedding_photography.php" class="sidebar-link">Wedding Photography</a>
                             </li>
                         </ul>
                     </li>
