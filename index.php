@@ -293,21 +293,7 @@ require_once("common_content/second_navbar.php");
   <?php
       }
   ?>
-  <!-- <div class="swiper-slide bg-white text-center overflow-hidden">
-    <img src="image/weeding_photography.jpeg" class="w-100 mb-2">
-  </div>
-  <div class="swiper-slide bg-white text-center overflow-hidden">
-    <img src="image/visiting_card_03.jpeg" class="w-100 mb-2">
-  </div>
-  <div class="swiper-slide bg-white text-center overflow-hidden">
-    <img src="image/visiting_card_02.jpeg" class="w-100 mb-2">
-  </div>
-  <div class="swiper-slide bg-white text-center overflow-hidden">
-    <img src="image/visiting_card_02.jpeg" class="w-100 mb-2">
-  </div>
-  <div class="swiper-slide bg-white text-center overflow-hidden">
-    <img src="image/visiting_card_02.jpeg" class="w-100 mb-2">
-  </div> -->
+  
 </div>
 <div class="swiper-pagination"></div>
 </div>
@@ -323,11 +309,21 @@ require_once("common_content/second_navbar.php");
 
 <!-- //===== BOOK AN APPOINTMENT SECTION START =====//  -->
 <section class="p-5 text-white text-center shadow border" id="book_appointment">
-    <h1 class="font-monospace fw-bold">MAKE YOUR DREAM SMILE A REALITY</h1>
-    <p class="my-4 fw-bold">Call Us To Book Your Appointment Today</p>
+                                <?php
+                                $sql4 = "SELECT * FROM b_an_appointment";
+                                $stmt4 = $connectingDB->query($sql4);
+                                while($Data4 = $stmt4->fetch()) {
+                                  $id = $Data4["id"];
+                                  $titttle = $Data4["title"];
+                                  $paragraph = $Data4["paragraph"];
+                                  $phh = $Data4["ph"];
+                                }
+                                ?>
+    <h1 class="font-monospace fw-bold text-uppercase"><?php echo $titttle; ?></h1>
+    <p class="my-4 fw-bold"><?php echo $paragraph; ?></p>
     <a href="tel:7029979185"><button type="button" class="btn btn-warning text-dark border border-dark rounded-0 fw-bold p-3 shadow-none  me-2"><i class="fa fa-phone"></i>
-        7029979185</button></a>
-    <a href="contact_us.html"><button type="button" class="btn btn-outline-warning border rounded-0 fw-bold p-3 shadow-none">Book
+        <?php echo $phh; ?></button></a>
+    <a href="contact_us.php"><button type="button" class="btn btn-outline-warning border rounded-0 fw-bold p-3 shadow-none">Book
           an Appointment</button></a>   
   </section><br><br>
   <!-- //===== BOOK AN APPOINTMENT SECTION START =====//  -->

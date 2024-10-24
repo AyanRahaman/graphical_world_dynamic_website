@@ -45,6 +45,12 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
+                        <a href="feedback.php" class="sidebar-link">
+                        <i class="fa-solid fa-file-shield pe-2"></i>
+                            Feedback
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse"
                             aria-expanded="false"><i class="fa-solid fa-file-lines pe-2"></i>
                             services
