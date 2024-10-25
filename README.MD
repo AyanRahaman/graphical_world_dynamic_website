@@ -24,4 +24,7 @@
        -- About us page fully dunamic complete
 
 7. 22/10/2024
-       -- Portfolio page fully dynamic complete       
+       -- Portfolio page fully dynamic complete 
+
+8. 25/10/2024
+       -- Services page succesfully completed             
