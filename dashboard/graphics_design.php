@@ -163,7 +163,7 @@ if(!empty($_SESSION['login'])){
       <!-- === //DRAGPHICS DESIGN IMAGE START// === -->
 <div class="col-md-12 col-lg-12 p-4">
                         <div class="p-3 border border-dark bg-white shadow-sm justify-content-around align-items-center rounded">   
-                    <h4 class="card-title mb-3 mt-3 fw-bold fst-italic text-success">Image</h4><hr>
+                    <h4 class="card-title mb-3 mt-3 fw-bold fst-italic text-success">Image (Graphics Design)</h4><hr>
                         <div class="row row-cols-1 row-cols-md-3 g-4">
                                 <?php
                                 require_once("partials/DBconnect.php");
@@ -197,6 +197,279 @@ if(!empty($_SESSION['login'])){
                     </div>
                     </div>
 <!-- === //GRAPHICS DESIGN IMAGE END// === -->
+
+
+
+
+
+ <!-- ===== //SERVICES SECTION START// ===== -->
+ <div class="col-md-12 col-lg-12 p-4">
+                <div
+                    class="p-3 border border-dark bg-white shadow d-flex justify-content-around align-items-center rounded">
+
+                    <!-- ===general settings section start===  -->
+
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h4 class="card-title m-0 fw-bold fst-italic text-success">Services (Graphics Design)</h4>
+                            <!-- ==Button trigger modal== -->
+                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#general-s">
+                                <i class="fas fa-edit"></i> Add Services
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Services</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    // require_once("partials/DBconnect.php");
+                                    $sql5 = "SELECT * FROM s_services WHERE type = 'Graphics Design' ORDER BY id DESC";
+
+                                    $stmt5 = $connectingDB->query($sql5);
+                                    while ($Data5 = $stmt5->fetch()) {
+                                        $id = $Data5["id"];
+                                        $s_s_name = $Data5["s_s_name"];
+                                        $type = $Data5["type"];
+                                        ?>
+                                        <tr>
+                                            <th scope="row"><?php echo $id; ?></th>
+                                            <td class=""><?php echo $s_s_name; ?></td>
+                                            <td><?php echo $type; ?></td>
+                                            <td><a
+                                                    href="g_design_services_delete.php?id=<?php echo $id; ?>"><button
+                                                        class="btn btn-danger shadow-none">Delete</button></a></td>
+
+                                        </tr>
+                                        <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ===general settings section end===  -->
+                    <!--===general setting Modal start===-->
+                    <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="true"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <form id="general_s_form" action="" method="post">
+                                <?php
+
+
+                                if (isset($_POST["s_services"])) {
+
+                                    $s_s_name = $_POST["s_s_name"];
+                                    $type = $_POST["type"];
+
+
+
+                                    if (!empty($_POST["s_s_name"]) && !empty($_POST["type"])) {
+
+                                        $sql6 = "INSERT INTO s_services (s_s_name,type)
+                                        VALUES('$s_s_name','$type')";
+
+                                        global $connectingDB;
+
+                                        $stmt6 = $connectingDB->prepare($sql6);
+                                        $stmt6->bindValue(':Xs_s_name', $s_s_name);
+                                        $stmt6->bindValue(':Xtype', $type);
+
+                                        $result6 = $stmt6->execute();
+
+                                        if ($result6) {
+                                            echo "<script>alert('Data succesfully inserted!');document.location='graphics_design.php'</script>";
+                                        } else {
+                                            echo "<script>alert('Data not inserted!!');document.location='graphics_design.php'</script>";
+                                        }
+
+                                    } else {
+                                        echo "<script>alert('please fill up the full form');</script>";
+                                    }
+                                }
+                                ?>
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Services (Website Development)</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Name</label>
+                                            <input type="text" name="s_s_name" id="site_title_inp"
+                                                class="form-control shadow-none" placeholder="Services Name"
+                                                required />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Type</label>
+                                            <select class="form-select shadow-none" id="inputGroupSelect01"
+                                                name="type" required>
+                                
+                                                <option value="Graphics Design">Graphics Design</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn text-secondary shadow-none"
+                                            data-bs-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                        <button type="submit" name="s_services" class="btn btn-dark text-white shadow-none">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- ===general section modaL end=== -->
+                </div>
+            </div>
+<!-- ===== //SERVICES SECTION END// ===== -->
+
+
+
+
+
+
+<!-- ===== //PROJECT SECTION START// ===== -->
+<div class="col-md-12 col-lg-12 p-4">
+                <div
+                    class="p-3 border border-dark bg-white shadow d-flex justify-content-around align-items-center rounded">
+
+                    <!-- ===general settings section start===  -->
+
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h4 class="card-title m-0 fw-bold fst-italic text-success">Project (Graphics Design)</h4>
+                            <!-- ==Button trigger modal== -->
+                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#general-p">
+                                <i class="fas fa-edit"></i> Add Services
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Services</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    // require_once("partials/DBconnect.php");
+                                    $sql7 = "SELECT * FROM s_s_c_project WHERE type = 'Graphics Design' ORDER BY id DESC";
+
+                                    $stmt7 = $connectingDB->query($sql7);
+                                    while ($Data7 = $stmt7->fetch()) {
+                                        $id = $Data7["id"];
+                                        $ssc_name = $Data7["ssc_name"];
+                                        $type2 = $Data7["type"];
+                                        ?>
+                                        <tr>
+                                            <th scope="row"><?php echo $id; ?></th>
+                                            <td class=""><?php echo $ssc_name; ?></td>
+                                            <td><?php echo $type2; ?></td>
+                                            <td><a
+                                                    href="g_design_project_delete.php?id=<?php echo $id; ?>"><button
+                                                        class="btn btn-danger shadow-none">Delete</button></a></td>
+
+                                        </tr>
+                                        <?php
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ===general settings section end===  -->
+                    <!--===general setting Modal start===-->
+                    <div class="modal fade" id="general-p" data-bs-backdrop="static" data-bs-keyboard="true"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <form id="general_s_form" action="" method="post">
+                                <?php
+
+
+                                if (isset($_POST["s_project"])) {
+
+                                    $ssc_name = $_POST["ssc_name"];
+                                    $type2 = $_POST["type2"];
+
+
+
+                                    if (!empty($_POST["ssc_name"]) && !empty($_POST["type2"])) {
+
+                                        $sql8 = "INSERT INTO s_s_c_project(ssc_name,type)
+                                        VALUES('$ssc_name','$type2')";
+
+                                        global $connectingDB;
+
+                                        $stmt8 = $connectingDB->prepare($sql8);
+                                        $stmt8->bindValue(':Xssc_name', $ssc_name);
+                                        $stmt8->bindValue(':Xtype', $type2);
+
+                                        $result8 = $stmt8->execute();
+
+                                        if ($result8) {
+                                            echo "<script>alert('Data succesfully inserted!');document.location='graphics_design.php'</script>";
+                                        } else {
+                                            echo "<script>alert('Data not inserted!!');document.location='graphics_design.php'</script>";
+                                        }
+
+                                    } else {
+                                        echo "<script>alert('please fill up the full form');</script>";
+                                    }
+                                }
+                                ?>
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Project (Graphics Design)</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Name</label>
+                                            <input type="text" name="ssc_name" id="site_title_inp"
+                                                class="form-control shadow-none" placeholder="Services Name"
+                                                required />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label fw-bold">Type</label>
+                                            <select class="form-select shadow-none" id="inputGroupSelect01"
+                                                name="type2" required>
+                                
+                                                <option value="Graphics Design">Graphics Design</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn text-secondary shadow-none"
+                                            data-bs-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                        <button type="submit" name="s_project" class="btn btn-dark text-white shadow-none">
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- ===general section modaL end=== -->
+                </div>
+            </div>
+<!-- ===== //PROJECT SECTION END// ===== -->
 
 
 

@@ -320,6 +320,110 @@ if(!empty($_SESSION['login'])){
 
 
 
+
+
+ <!-- ===== //FOOTER SECTION START// ===== -->
+ <div class="col-md-12 col-lg-12 p-4">
+                        <div class="p-3 border border-dark bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                           
+                            <!-- ===testimonial image body section start===  -->
+                            <?php
+                                    //    require_once("partials/DBconnect.php");
+                                       
+                                       $sql = "SELECT * FROM footer";
+                                       $stmt = $connectingDB->query($sql);
+                                       while ($Data = $stmt->fetch()) {
+                                           $f_heading = $Data["f_heading"];
+                                           $f_body = $Data["f_body"];
+                                       }
+                                       ?>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <h4 class="card-title m-0 fw-bold fst-italic text-success">Footer</h4>
+                                    <!-- ==Button trigger modal== -->
+                                    <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#general-f">
+                                        <i class="fas fa-edit"></i> Edit
+                                    </button>
+                                </div>
+                                <h6 class="card-subtitle mb-1 fw-bold">Heading</h6>
+                                <p class="card-text" id="site_title"><?php echo $f_heading; ?></p>
+                                <h6 class="card-subtitle mb-1 fw-bold">Body</h6>
+                                <p class="card-text" id="site_about"><?php echo $f_body; ?></p>
+                            </div>
+                            <!-- ===Testimonisal image body section end===  -->
+                            <!--===Testimonisal image body Modal start===-->
+                            <?php
+
+                              if (isset($_POST["footer"])) {
+                                
+                                  $f_heading = $_POST["f_heading"];
+                                  $f_body = $_POST["f_body"];
+
+                                 
+
+
+                                  if(!empty($_POST["f_heading"]) && !empty($_POST["f_body"])){
+
+                                    $query3 = "UPDATE footer SET f_heading = '$f_heading', f_body = '$f_body'  WHERE id=1";
+                              
+                                    $result3 = $connectingDB->query($query3);
+                              
+                                    if($result3){
+                                echo "<script>alert('Data succesfully updated!!');document.location='settings.php'</script>";
+                                  }
+                                  else{
+                                    echo "<script>alert('Data not updated!! Something went wrong');document.location='settings.php'</script>";
+
+                                  }
+
+                                  }  
+                              }
+                              ?>
+                <div class="modal fade" id="general-f" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form id="general_s_form" action="" method="post">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Footer</h5>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Heading</label>
+                                    <input type="text" name="f_heading" id="site_title_inp"
+                                        class="form-control shadow-none" required value="<?php echo $f_heading; ?>"/>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Body</label>
+                                    <textarea class="form-control shadow-none" rows="6" name="f_body"
+                                        id="marquee_heading_inp" required><?php echo $f_body; ?></textarea>
+                                </div>
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button"
+                                    class="btn text-secondary shadow-none" data-bs-dismiss="modal">
+                                    Cancel
+                                </button>
+                                <button type="submit" name="footer" class="btn btn-dark text-white shadow-none">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- ===Testimonial image body modaL end=== -->
+                        </div>
+                    </div>
+    <!-- ===== //FOOTER SECTION END// ===== -->    
+
+
+
+
+
+
              <!-- -----------------------------------------------------------------------------------------------------------------------------         -->
              <?php
                     // Footer-->
