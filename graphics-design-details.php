@@ -19,11 +19,8 @@ require_once("common_content/upper_links.php");
 
 <!-- ===============================================================================================================  -->
 <?php
-// <-- First navbar -->
-require_once("common_content/first_navbar.php");
-
-// <-- Second navbar -->
-require_once("common_content/second_navbar.php");
+// <-- navbar -->
+require_once("common_content/navbar.php");
 ?>
 <!-- ===============================================================================================================  -->
 
