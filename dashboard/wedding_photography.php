@@ -58,7 +58,7 @@ if(!empty($_SESSION['login'])){
                             <?php
                                        require_once("partials/DBconnect.php");
                                        
-                                       $sql = "SELECT * FROM s_content WHERE id = 1";
+                                       $sql = "SELECT * FROM s_content WHERE id = 4";
                                        $stmt = $connectingDB->query($sql);
                                        while ($Data = $stmt->fetch()) {
                                            $about = $Data["about"];
@@ -68,7 +68,7 @@ if(!empty($_SESSION['login'])){
                                        ?>
                             <div class="card-body">
                                 <div class="d-flex align-items-center justify-content-between mb-3">
-                                    <h4 class="card-title m-0 fw-bold fst-italic text-success">Graphics Design</h4>
+                                    <h4 class="card-title m-0 fw-bold fst-italic text-success">Wedding Photography</h4>
                                     <!-- ==Button trigger modal== -->
                                     <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#general-q">
@@ -86,7 +86,7 @@ if(!empty($_SESSION['login'])){
                             <!--===Testimonisal image body Modal start===-->
                             <?php
 
-                              if (isset($_POST["graphics_design"])) {
+                              if (isset($_POST["wedding_photography"])) {
                                 
                                   $about = $_POST["about"];
                                   $h1 = $_POST["h1"];
@@ -97,15 +97,15 @@ if(!empty($_SESSION['login'])){
 
                                   if(!empty($_POST["about"]) && !empty($_POST["h1"]) && !empty($_POST["h2"])){
 
-                                    $query3 = "UPDATE s_content SET about = '$about', h1 = '$h1', h2 = '$h2'  WHERE id=1";
+                                    $query3 = "UPDATE s_content SET about = '$about', h1 = '$h1', h2 = '$h2'  WHERE id=4";
                               
                                     $result3 = $connectingDB->query($query3);
                               
                                     if($result3){
-                                echo "<script>alert('Data succesfully updated!!');document.location='graphics_design.php'</script>";
+                                echo "<script>alert('Data succesfully updated!!');document.location='wedding_photography.php'</script>";
                                   }
                                   else{
-                                    echo "<script>alert('Data not updated!! Something went wrong');document.location='graphics_design.php'</script>";
+                                    echo "<script>alert('Data not updated!! Something went wrong');document.location='wedding_photography.php'</script>";
 
                                   }
 
@@ -118,7 +118,7 @@ if(!empty($_SESSION['login'])){
                     <form id="general_s_form" action="" method="post">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title">Graphics Design</h5>
+                                <h5 class="modal-title">Wedding Photography</h5>
                             </div>
                             <div class="modal-body">
                                 <div class="mb-3">
@@ -143,7 +143,7 @@ if(!empty($_SESSION['login'])){
                                     class="btn text-secondary shadow-none" data-bs-dismiss="modal">
                                     Cancel
                                 </button>
-                                <button type="submit" name="graphics_design" class="btn btn-dark text-white shadow-none">
+                                <button type="submit" name="wedding_photography" class="btn btn-dark text-white shadow-none">
                                     Submit
                                 </button>
                             </div>
