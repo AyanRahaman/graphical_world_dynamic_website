@@ -4,25 +4,31 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 p-4">
-          <h3 class="h-font fw-bold fs-3 text-warning">GRAPHICAL WORLD</h3>
+        <?php
+         require_once("dashboard/partials/DBconnect.php");
+         $sql1 = "SELECT * FROM footer";
+         $stmt1 = $connectingDB->query($sql1);
+         while ($Data1 = $stmt1->fetch()) {
+             $f_heading = $Data1["f_heading"];
+             $f_body = $Data1["f_body"];
+         }
+         ?>
+          <h3 class="h-font fw-bold fs-3 text-warning text-uppercase"><?php echo $f_heading; ?></h3>
           <p>
-            Welcome to Graphical World. Our graphic design shop specializes in
-            bringing your vision to life through innovative and visually captivating designs. Whether you need a
-            striking logo, eye-catching marketing materials, or custom illustrations, our team of talented designers is
-            here to elevate your brand.
+           <?php echo $f_body; ?>
           </p>
         </div>
         <div class="col-lg-3 p-4">
           <h5 class="mb-3 fw-bold text-warning">Important Links</h5>
-          <a href="about_us.php" class="d-inline-block mb-2 text-white text-decoration-none">
+          <a href="about_us" class="d-inline-block mb-2 text-white text-decoration-none">
             <i class="fa-solid fa-angles-right text-warning"></i><span class="fot"> About</span></a><br>
-          <a href="photography-details.php" class="d-inline-block mb-2 text-white text-decoration-none">
-            <i class="fa-solid fa-angles-right text-warning"></i><span class="fot"> Photography</span></a><br>
-          <a href="graphics-design-details.php" class="d-inline-block mb-2 text-white text-decoration-none">
+          <a href="wedding-photography-details" class="d-inline-block mb-2 text-white text-decoration-none">
+            <i class="fa-solid fa-angles-right text-warning"></i><span class="fot"> Wedding Photography</span></a><br>
+          <a href="graphics-design-details" class="d-inline-block mb-2 text-white text-decoration-none">
             <i class="fa-solid fa-angles-right text-warning"></i><span class="fot"> Graphics Design</span></a><br>
-          <a href="digital-markeeting-details.php" class="d-inline-block mb-2 text-white text-decoration-none">
+          <a href="digital-markeeting-details" class="d-inline-block mb-2 text-white text-decoration-none">
             <i class="fa-solid fa-angles-right text-warning"></i><span class="fot"> Digital Markeeting</span></a><br>
-          <a href="webdev-details.php" class="d-inline-block mb-2 text-white text-decoration-none">
+          <a href="webdev-details" class="d-inline-block mb-2 text-white text-decoration-none">
             <i class="fa-solid fa-angles-right text-warning"></i><span class="fot"> Web Design & development</span></a><br>
 
         </div>
@@ -40,12 +46,24 @@
             Linkedin</a><br>
         </div>
         <div class="col-lg-3 p-4">
+          <?php
+          
+          $sql2 = "SELECT * FROM contact_us";
+          $stmt2 = $connectingDB->query($sql2);
+          while ($Data2 = $stmt2->fetch()) {
+              $address = $Data2["address"];
+              $email = $Data2["email"];
+              $ph1 = $Data2["ph1"];
+              $ph2 = $Data2["ph2"];
+
+          }
+          ?>
           <h4 class="mb-3 fw-bold text-warning">Address</h4>
-          <i class="fa-solid fa-location-dot"></i> Langalhata, Labpur, bolpur, West Bengal 731304 (Near Langalhata Bus
-          stand) <br>
-          <i class="fa-solid fa-envelope"></i> someone@gmail.com <br>
-          <i class="fa-solid fa-phone"></i> +91 0125485465 <br>
-          <i class="fa-solid fa-phone"></i> +91 0125485465 <br>
+          <i class="fa-solid fa-location-dot"></i> <?php echo $address; ?>
+          <br>
+          <i class="fa-solid fa-envelope"></i> <?php echo $email; ?> <br>
+          <i class="fa-solid fa-phone"></i> <?php echo $ph1; ?> <br>
+          <i class="fa-solid fa-phone"></i> <?php echo $ph2; ?> <br>
         </div>
       </div>
     </div>
@@ -56,10 +74,10 @@
   <div class="second-footer m-0" style="background-color: #222222;">
     <div class="container">
         <div class="copyright">
-          © Copyright <strong><span>Graphical World</span></strong>. All Rights Reserved
+          © Copyright <strong><span>|Graphicalworld.in|</span></strong> All Rights Reserved
         </div>
         <div class="credits">
-          Designed by <a href="https://shahidur-rahaman.netlify.app/" target="_blank" class="text-decoration-none text-warning">Shahidur Rahaman</a>
+          Designed and Developed by <a href="" class="text-decoration-none text-warning">Shahidur Rahaman</a>
         </div>
       </div>
 </div>

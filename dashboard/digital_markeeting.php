@@ -129,12 +129,12 @@ if(!empty($_SESSION['login'])){
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Heading 1</label>
                                     <textarea class="form-control shadow-none" rows="5" name="h1"
-                                        id="site_about_inp" required><?php echo $about; ?></textarea>
+                                        id="site_about_inp" required><?php echo $h1; ?></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label fw-bold">Heading 2</label>
                                     <textarea class="form-control shadow-none" rows="5" name="h2"
-                                        id="site_about_inp" required><?php echo $about; ?></textarea>
+                                        id="site_about_inp" required><?php echo $h2; ?></textarea>
                                 </div>
                                 
                             </div>

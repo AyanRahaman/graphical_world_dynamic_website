@@ -58,8 +58,8 @@ require_once("common_content/navbar.php");
       <h1 class="display-5 text-uppercase fw-bold lh-1 mb-3"><?php echo $title1; ?> - <span class="text-warning"><?php echo $title2; ?></span></h1>
       <p class="lead"><?php echo $body; ?></p>
       <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a href="contact_us.php"><button type="button" class="shadow-none btn btn-primary btn-lg rounded-0 px-4 me-md-2" fdprocessedid="91iimw">Contact Us &nbsp;</button></a>
-        <a href="services.php"><button type="button" class="shadow-none btn btn-outline-secondary rounded-0 btn-lg px-4" fdprocessedid="60ek9h">Our Services</button></a>
+        <a href="contact_us"><button type="button" class="shadow-none btn btn-primary btn-lg rounded-0 px-4 me-md-2" fdprocessedid="91iimw">Contact Us &nbsp;</button></a>
+        <a href="services"><button type="button" class="shadow-none btn btn-outline-secondary rounded-0 btn-lg px-4" fdprocessedid="60ek9h">Our Services</button></a>
       </div>
     </div>
   </div>

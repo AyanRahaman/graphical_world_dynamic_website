@@ -54,9 +54,9 @@ require_once("common_content/navbar.php");
                ?>
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-chart-simple fs-2 rounded p-3 bg-warning"></i>
-                    <a href="graphics-design-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type; ?></h4></a>
+                    <a href="graphics-design-details" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type; ?></h4></a>
                     <p><?php echo $about; ?></p>
-                    <a href="graphics-design-details.php" class="btn btn-outline-dark p-3 rounded-0">Get More Details</a>
+                    <a href="graphics-design-details" class="btn btn-outline-dark p-3 rounded-0">Get More Details</a>
                  </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-4">
@@ -74,9 +74,9 @@ require_once("common_content/navbar.php");
                ?>
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-camera-rotate fs-2 rounded p-3 bg-warning"></i>
-                    <a href="webdev-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type2; ?></h4></a>
+                    <a href="webdev-details" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type2; ?></h4></a>
                     <p><?php echo $about2; ?></p>
-                    <a href="webdev-details.php" class="btn btn-outline-dark p-3 rounded-0">Get More Details</a>
+                    <a href="webdev-details" class="btn btn-outline-dark p-3 rounded-0">Get More Details</a>
                  </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-4">
@@ -94,9 +94,9 @@ require_once("common_content/navbar.php");
                ?>
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-wand-magic-sparkles fs-2 rounded p-3 bg-warning"></i>
-                    <a href="digital-markeeting-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type3; ?></h4></a>
+                    <a href="digital-markeeting-details" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type3; ?></h4></a>
                     <p><?php echo $about3; ?></p>
-                    <a href="digital-markeeting-details.php" class="btn btn-outline-dark p-3 rounded-0">Get More Details</a>
+                    <a href="digital-markeeting-details" class="btn btn-outline-dark p-3 rounded-0">Get More Details</a>
                  </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-4">
@@ -114,9 +114,9 @@ require_once("common_content/navbar.php");
                ?>
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-earth-oceania fs-2 rounded p-3 bg-warning"></i>
-                    <a href="wedding-photography-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type4; ?></h4></a>
+                    <a href="wedding-photography-details" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type4; ?></h4></a>
                     <p><?php echo $about4; ?></p>
-                    <a href="wedding-photography-details.php" class="btn btn-outline-dark p-3 rounded-0">Get More Details</a>
+                    <a href="wedding-photography-details" class="btn btn-outline-dark p-3 rounded-0">Get More Details</a>
                  </div>
             </div>
         </div>

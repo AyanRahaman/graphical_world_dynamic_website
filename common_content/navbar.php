@@ -17,16 +17,16 @@ require_once("upper_links.php");
             <a class="nav-link active text-warning fw-bold" aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fw-bold" href="about_us.php">About Us</a>
+            <a class="nav-link text-white fw-bold" href="about_us">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fw-bold" href="services.php">Services</a>
+            <a class="nav-link text-white fw-bold" href="services">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fw-bold" href="portfolio.php">Portfolio</a>
+            <a class="nav-link text-white fw-bold" href="portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fw-bold" href="contact_us.php">Contact us</a>
+            <a class="nav-link text-white fw-bold" href="contact_us">Contact us</a>
           </li>
         </ul>
         <span class="navbar-text">
@@ -34,7 +34,7 @@ require_once("upper_links.php");
             <a href="" class="text-decoration-none">Register</a>
           </button>
           <button type="button" class="btn border border-warning border-2 shadow-none  mx-1 btn btn-outline-warning">
-            <a href="dashboard/admin_login.php" class="text-decoration-none">Login</a>
+            <a href="dashboard/admin_login" class="text-decoration-none">Login</a>
           </button>
         </span>
       </div>

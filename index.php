@@ -68,8 +68,8 @@ require_once("common_content/navbar.php");
               <div class="col-lg-7 mx-auto text-center">
                   <h1 class="display-4 text-white text-uppercase"><?php echo $title; ?></h1>
                   <p class="text-white my-3"><?php echo $body; ?></p>
-                  <a href="contact_us.php" class="btn me-2 btn-primary p-3 rounded-0">Get Started</a>
-                  <a href="portfolio.php" class="btn btn-outline-light p-3 rounded-0">My Portfolio</a>
+                  <a href="contact_us" class="btn me-2 btn-primary p-3 rounded-0">Get Started</a>
+                  <a href="portfolio" class="btn btn-outline-light p-3 rounded-0">My Portfolio</a>
               </div>
           </div>
       </div>
@@ -119,7 +119,7 @@ require_once("common_content/navbar.php");
               ?>
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-chart-simple fs-2 rounded p-3 bg-warning"></i>
-                    <a href="digital-markeeting-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type; ?></h4></a>
+                    <a href="graphics-design-details" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type; ?></h4></a>
                     <p><?php echo $about; ?></p>
                  </div>
             </div>
@@ -138,7 +138,7 @@ require_once("common_content/navbar.php");
                ?>
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-camera-rotate fs-2 rounded p-3 bg-warning"></i>
-                    <a href="photography-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type2; ?></h4></a>
+                    <a href="webdev-details" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type2; ?></h4></a>
                     <p><?php echo $about2; ?></p>
                  </div>
             </div>
@@ -157,7 +157,7 @@ require_once("common_content/navbar.php");
                ?>
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-wand-magic-sparkles fs-2 rounded p-3 bg-warning"></i>
-                    <a href="graphics-design-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type3; ?></h4></a>
+                    <a href="digital-markeeting-details" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type3; ?></h4></a>
                     <p><?php echo $about3; ?></p>
                  </div>
             </div>
@@ -176,7 +176,7 @@ require_once("common_content/navbar.php");
                ?>
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-earth-oceania fs-2 rounded p-3 bg-warning"></i>
-                    <a href="webdev-details.php" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type4; ?></h4></a>
+                    <a href="wedding-photography-details" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type4; ?></h4></a>
                     <p><?php echo $about4; ?></p>
                  </div>
             </div>
@@ -271,7 +271,7 @@ require_once("common_content/navbar.php");
           <h2>Portfolio</h2>
           <p>My creative Work <span class="text-danger font-italic">Latest Project</span></p>
           <!-- <span class="btn btn-danger">Danger</span> -->
-           <span><a href="portfolio.php" class="btn btn-danger">Our Portfolio</a></span>
+           <span><a href="portfolio" class="btn btn-danger">Our Portfolio</a></span>
         </div>
  </div>
 
@@ -320,7 +320,7 @@ require_once("common_content/navbar.php");
     <p class="my-4 fw-bold"><?php echo $paragraph; ?></p>
     <a href="tel:7029979185"><button type="button" class="btn btn-warning text-dark border border-dark rounded-0 fw-bold p-3 shadow-none  me-2"><i class="fa fa-phone"></i>
         <?php echo $phh; ?></button></a>
-    <a href="contact_us.php"><button type="button" class="btn btn-outline-warning border rounded-0 fw-bold p-3 shadow-none">Book
+    <a href="contact_us"><button type="button" class="btn btn-outline-warning border rounded-0 fw-bold p-3 shadow-none">Book
           an Appointment</button></a>   
   </section><br><br>
   <!-- //===== BOOK AN APPOINTMENT SECTION START =====//  -->

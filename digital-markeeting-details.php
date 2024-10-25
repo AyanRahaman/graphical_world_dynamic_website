@@ -26,7 +26,19 @@ require_once("common_content/navbar.php");
 <!-- ===============================================================================================================  -->
 
 
-
+<?php
+         require_once("dashboard/partials/DBconnect.php");
+         $sql1 = "SELECT * FROM s_content WHERE type = 'Digital Markeeting'";
+         $stmt1 = $connectingDB->query($sql1);
+         while ($Data1 = $stmt1->fetch()) {
+             $image = $Data1["image"];
+             $about = $Data1["about"];
+             $h1 = $Data1["h1"];
+             $h2 = $Data1["h2"];
+             $type = $Data1["type"];
+         }
+         
+         ?>
 
 
 
@@ -38,21 +50,15 @@ require_once("common_content/navbar.php");
         <img src="image/digital_markeeting_service.jpg" height="200px" width="100%" class="" alt="..." />
         <article class="blog-post shadow p-3 bg-white">
           <h2 class="display-5 link-body-emphasis mb-3 fw-bold text-center">
-            Digital Markeeting
+            <?php echo $type; ?>
           </h2>
 
           <p>
-            In today's digital landscape, businesses and organizations must adapt to the changing ways in which
-            consumers interact with brands. Digital marketing has become an essential tool for reaching target audiences
-            and achieving marketing goals. In this article, we'll explore the world of digital marketing, its benefits,
-            and the various strategies and channels available to marketers.
+            <?php echo $h1; ?>
           </p>
           <hr />
           <p>
-            In the ever-evolving landscape of business and technology, digital marketing has emerged as a cornerstone of
-            successful brand strategies. From its early days of email campaigns and banner ads to the sophisticated,
-            data-driven techniques of today, digital marketing has transformed how businesses connect with their
-            audiences, driving engagement and growth in ways never before imagined.
+          <?php echo $h2; ?>
           </p><br>
           <hr>
           <div class="bg-white blog_details">
