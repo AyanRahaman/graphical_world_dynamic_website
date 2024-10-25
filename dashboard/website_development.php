@@ -48,6 +48,8 @@ if(!empty($_SESSION['login'])){
  
 
 
+      
+
 
 
 <!-- ===== //WEBSITE DEVELOPMENT DETAILS PART START// ===== -->
@@ -157,6 +159,50 @@ if(!empty($_SESSION['login'])){
     <!-- ===== //WEBSITE_DEVELOPMENT_DETAILS PART END// ===== -->
            
 
+
+
+
+
+
+
+    
+<!-- === //WEBSITE DEVELOPMENT IMAGE START// === -->
+<div class="col-md-12 col-lg-12 p-4">
+                        <div class="p-3 border border-dark bg-white shadow-sm justify-content-around align-items-center rounded">   
+                    <h4 class="card-title mb-3 mt-3 fw-bold fst-italic text-success">Image</h4><hr>
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                                <?php
+                                require_once("partials/DBconnect.php");
+                                $sql3 = "SELECT * FROM s_content WHERE id = 2";
+                                $stmt3 = $connectingDB->query($sql3);
+                                while($Data3 = $stmt3->fetch()) {
+                                  $id = $Data3["id"];
+                                  $image = $Data3["image"];
+                                
+                                ?>
+                                <!-- ===image card start=== -->
+                                <div class="col-lg-4">
+                                  <div class="card h-100">
+                                    <img src="images/<?php echo $image; ?>" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                    <a href=" w_d_image.php?id=<?php echo $id; ?>">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    <i class="fas fa-edit"></i> change image
+                                        </button>
+                                    </a>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- ===image card end=== -->
+
+                                
+                                <?php
+                             }
+                              ?>
+                              </div>   
+                    </div>
+                    </div>
+<!-- === //WEBSITE DEVELOPMENT IMAGE END// === -->       
 
 
 

@@ -58,7 +58,9 @@ require_once("common_content/second_navbar.php");
             only captures the moments but also enhances the story, creating a visual narrative that lasts a lifetime.
           </p><br>
           <hr>
-          <h2 class="fw-bold">OUR SERVICES</h2>
+          <div class="bg-white blog_details">
+            <h5>OUR SERVICES</h5>
+          </div>
           <div class="our_services">
             <div class="row">
               <div class="col-lg-4">
@@ -92,7 +94,9 @@ require_once("common_content/second_navbar.php");
             </div>
           </div>
           <br><br>
-          <h4>Some common projects we have wroked on included :</h4>
+          <div class="bg-white blog_details">
+            <h5>Some common projects we have wroked on included</h5>
+          </div>
           <ul class="list-unstyled">
             <li>
               <i class="fa-solid fa-diamond text-warning"></i> Brochures, rack cards & booklets
@@ -113,34 +117,11 @@ require_once("common_content/second_navbar.php");
           <hr>
 
 
-          <div class="bg-white blog_details">
-            <h5>Prices of Our Product</h5>
-          </div>
+          
 
-
-          <table class="table">
-            <tbody>
-              <tr>
-                <td colspan="2">Weeding Image</td>
-                <td>₹100</td>
-              </tr>
-              <tr>
-                <td colspan="2">Weeding Video</td>
-                <td>₹100</td>
-              </tr>
-              <tr>
-                <td colspan="2">Full (Image + video pack)</td>
-                <td>₹100</td>
-              </tr>
-              <tr>
-                <td colspan="2">Drone video</td>
-                <td>₹100</td>
-              </tr>
-            </tbody>
-          </table>
 
           <nav class="blog-pagination mt-5" aria-label="Pagination">
-            <a href="contact_us.php"><button type="button" class="btn btn-info">
+            <a href="contact_us.php"><button type="button" class="btn btn-dark rounded-0">
                 Got a project? Contact us!
               </button></a>
           </nav>

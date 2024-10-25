@@ -57,7 +57,9 @@ require_once("common_content/second_navbar.php");
             audiences, driving engagement and growth in ways never before imagined.
           </p><br>
           <hr>
-          <h2 class="fw-bold">OUR SERVICES</h2>
+          <div class="bg-white blog_details">
+            <h5>OUR SERVICES</h5>
+          </div>
           <!-- <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly
             repetitive body text used throughout. This is an example unordered list:</p> -->
           <div class="our_services">
@@ -93,7 +95,9 @@ require_once("common_content/second_navbar.php");
             </div>
           </div>
           <br><br>
-          <h4>Some common projects we have wroked on included :</h4>
+          <div class="bg-white blog_details">
+            <h5>Some common projects we have wroked on included</h5>
+          </div>
           <ul class="list-unstyled">
             <li>
               <i class="fa-solid fa-diamond text-warning"></i> Search Engine Optimization(SEO)
@@ -114,34 +118,13 @@ require_once("common_content/second_navbar.php");
           <hr>
 
 
-          <div class="bg-white blog_details">
-            <h5>Prices of Our Product</h5>
-          </div>
+          
 
 
-          <table class="table">
-            <tbody>
-              <tr>
-                <td colspan="2">Search Engine Optimization(SEO)</td>
-                <td>₹100</td>
-              </tr>
-              <tr>
-                <td colspan="2">paid Media</td>
-                <td>₹100</td>
-              </tr>
-              <tr>
-                <td colspan="2">Content Markeeting</td>
-                <td>₹100</td>
-              </tr>
-              <tr>
-                <td colspan="2">Digital Markeeting</td>
-                <td>₹100</td>
-              </tr>
-            </tbody>
-          </table>
+          
 
           <nav class="blog-pagination mt-5" aria-label="Pagination">
-            <a href="contact_us.php"><button type="button" class="btn btn-info">
+            <a href="contact_us.php"><button type="button" class="btn btn-dark rounded-0">
                 Got a project? Contact us!
               </button></a>
           </nav>
