@@ -57,7 +57,7 @@ if(!empty($_SESSION['login'])){
 
 
 
-   <!-- ===== //TEAM SECTION START// ===== -->
+   <!-- ===== //FEEDBACK SECTION START// ===== -->
    <div class="col-md-12 col-lg-12 p-4">
                 <div
                     class="p-3 border border-dark bg-white shadow d-flex justify-content-around align-items-center rounded">
@@ -240,7 +240,7 @@ if(!empty($_SESSION['login'])){
                     <!-- ===general section modaL end=== -->
                 </div>
             </div>
-            <!-- ===== //TEAM SECTION END// ===== -->            
+            <!-- ===== //FEEDBACK SECTION END// ===== -->            
 
  
 
