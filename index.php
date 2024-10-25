@@ -343,19 +343,32 @@ require_once("common_content/second_navbar.php");
     <!-- Swiper -->
     <div class="swiper swiper-testimonials">
       <div class="swiper-wrapper mb-5">
-        <div class="review-card swiper-slide p-4 shadow">
+                                  <?php
+                                    // require_once("partials/DBconnect.php");
+                                    $sql = "SELECT * FROM feedback WHERE status = 1";
+
+                                    $stmt = $connectingDB->query($sql);
+                                    while ($Data = $stmt->fetch()) {
+                                        $id = $Data["id"];
+                                        $name = $Data["name"];
+                                        $date = $Data["date"];
+                                        $content = $Data["content"];
+                                        $status = $Data["status"];
+                                        ?>
+        <div class="review-card swiper-slide p-4 shadow border border-dark">
           <div class="header-content">
             <div class="img-area">
-              <img alt="customer1" src="image/ayann.jpg">
+              <img alt="customer1" src="image/feedback.png">
             </div>
             <div class="info">
-              <h4>Jason Chedd</h4>
-              <p>Web Designer</p>
+              <h4><?php echo $name; ?></h4>
+            <p>Reviewed on <?php echo $date; ?></p>
             </div>
           </div>
           <div class="single-review">
-            <p><i class="fa-solid fa-quote-left fs-4"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolor eveniet deleniti repellendus! Minima,
-              dolorum. <i class="fa-solid fa-quote-right fs-4"></i></p>
+            <p><i class="fa-solid fa-quote-left fs-4"></i> 
+                                      <?php echo $content; ?>
+            <i class="fa-solid fa-quote-right fs-4"></i></p>
           </div>
           <div class="review-footer">
             <div class="rating">
@@ -365,138 +378,16 @@ require_once("common_content/second_navbar.php");
               <span class="active">★</span>
               <span class="active">★</span>
             </div>
-            <p>Reviewed on 01/03/2023</p>
           </div>
         </div>
-        <div class="review-card swiper-slide p-4 shadow">
-          <div class="header-content">
-            <div class="img-area">
-              <img alt="customer1" src="image/ayann.jpg">
-            </div>
-            <div class="info">
-              <h4>John Doe</h4>
-              <p>Maketing Manager</p>
-            </div>
-          </div>
-          <div class="single-review">
-            <p><i class="fa-solid fa-quote-left fs-4"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolor eveniet deleniti repellendus! Minima,
-              dolorum.<i class="fa-solid fa-quote-right fs-4"></i></p>
-          </div>
-          <div class="review-footer">
-            <div class="rating">
-              <span class="active">★</span>
-              <span class="active">★</span>
-              <span class="active">★</span>
-              <span class="">★</span>
-              <span class="">★</span>
-            </div>
-            <p>Reviewed on 01/01/2023</p>
-          </div>
-        </div>
-        <div class="review-card swiper-slide p-4 shadow">
-          <div class="header-content">
-            <div class="img-area">
-              <img alt="customer1" src="image/ayann.jpg">
-            </div>
-            <div class="info">
-              <h4>John Doe</h4>
-              <p>Maketing Manager</p>
-            </div>
-          </div>
-          <div class="single-review">
-            <p><i class="fa-solid fa-quote-left fs-4"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolor eveniet deleniti repellendus! Minima,
-              dolorum.<i class="fa-solid fa-quote-right fs-4"></i></p>
-          </div>
-          <div class="review-footer">
-            <div class="rating">
-              <span class="active">★</span>
-              <span class="active">★</span>
-              <span class="active">★</span>
-              <span class="">★</span>
-              <span class="">★</span>
-            </div>
-            <p>Reviewed on 01/01/2023</p>
-          </div>
-        </div>
-        <div class="review-card swiper-slide p-4 shadow">
-          <div class="header-content">
-            <div class="img-area">
-              <img alt="customer1" src="image/ayann.jpg">
-            </div>
-            <div class="info">
-              <h4>John Doe</h4>
-              <p>Maketing Manager</p>
-            </div>
-          </div>
-          <div class="single-review">
-            <p><i class="fa-solid fa-quote-left fs-4"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolor eveniet deleniti repellendus! Minima,
-              dolorum. <i class="fa-solid fa-quote-right fs-4"></i></p>
-          </div>
-          <div class="review-footer">
-            <div class="rating">
-              <span class="active">★</span>
-              <span class="active">★</span>
-              <span class="active">★</span>
-              <span class="">★</span>
-              <span class="">★</span>
-            </div>
-            <p>Reviewed on 01/01/2023</p>
-          </div>
-        </div>
-        <div class="review-card swiper-slide p-4 shadow">
-          <div class="header-content">
-            <div class="img-area">
-              <img alt="customer1" src="image/ayann.jpg">
-            </div>
-            <div class="info">
-              <h4>John Doe</h4>
-              <p>Maketing Manager</p>
-            </div>
-          </div>
-          <div class="single-review">
-            <p><i class="fa-solid fa-quote-left fs-4"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolor eveniet deleniti repellendus! Minima,
-              dolorum.<i class="fa-solid fa-quote-right fs-4"></i></p>
-          </div>
-          <div class="review-footer">
-            <div class="rating">
-              <span class="active">★</span>
-              <span class="active">★</span>
-              <span class="active">★</span>
-              <span class="">★</span>
-              <span class="">★</span>
-            </div>
-            <p>Reviewed on 01/01/2023</p>
-          </div>
-        </div>
-        <div class="review-card swiper-slide p-4 shadow">
-          <div class="header-content">
-            <div class="img-area">
-              <img alt="customer1" src="image/ayann.jpg">
-            </div>
-            <div class="info">
-              <h4>John Doe</h4>
-              <p>Maketing Manager</p>
-            </div>
-          </div>
-          <div class="single-review">
-            <p><i class="fa-solid fa-quote-left fs-4"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo dolor eveniet deleniti repellendus! Minima,
-              dolorum.<i class="fa-solid fa-quote-right fs-4"></i></p>
-          </div>
-          <div class="review-footer">
-            <div class="rating">
-              <span class="active">★</span>
-              <span class="active">★</span>
-              <span class="active">★</span>
-              <span class="">★</span>
-              <span class="">★</span>
-            </div>
-            <p>Reviewed on 01/01/2023</p>
-          </div>
-        </div>
+        <?php
+                                    }
+        ?>
+        
       </div>
       <div class="swiper-pagination"></div>
     </div>
-  </div>
+  </div><br><br>
   <!-- //===== TESTIMONIAL SECTION END =====//  -->
 
 

@@ -21,7 +21,6 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="password_change.php" class="dropdown-item">Change Password</a>
-                                <a href="#" class="dropdown-item">Setting</a>
                                 <a href="logout.php" class="dropdown-item">Logout</a>
                             </div>
                         </li>

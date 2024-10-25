@@ -79,43 +79,45 @@ if(!empty($_SESSION['login'])){
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Image</th>
-                                        <th scope="col">Designation</th>
-                                        <th scope="col">Facebook</th>
-                                        <th scope="col">Instagram</th>
-                                        <th scope="col">Twittter</th>
-                                        <th scope="col">Delete</th>
-                                    </tr>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Content</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Action</th>
                                 </thead>
                                 <tbody>
                                     <?php
                                     require_once("partials/DBconnect.php");
-                                    $sql = "SELECT * FROM team";
+                                    $sql = "SELECT * FROM feedback";
 
                                     $stmt = $connectingDB->query($sql);
                                     while ($Data = $stmt->fetch()) {
                                         $id = $Data["id"];
                                         $name = $Data["name"];
-                                        $image = $Data["image"];
-                                        $designation = $Data["Designation"];
-                                        $facebook = $Data["facebook"];
-                                        $instagram = $Data["instagram"];
-                                        $twitter = $Data["twitter"];
-
+                                        $date = $Data["date"];
+                                        $content = $Data["content"];
+                                        $status = $Data["status"];
                                         ?>
                                         <tr>
                                             <th scope="row"><?php echo $id; ?></th>
-                                            <td class="text-uppercase"><?php echo $name; ?></td>
-                                            <td scope="row">
-                                                <img src="images/<?php echo $image; ?>" width="150px" height="150px"
-                                                    alt="<?php echo $image; ?>">
-                                            </td>
-                                            <td><?php echo $designation; ?></td>
-                                            <td><?php echo $facebook; ?></td>
-                                            <td><?php echo $instagram; ?></td>
-                                            <td><?php echo $twitter; ?></td>
+                                            <td><?php echo $name; ?></td>
+                                            <td><?php echo $date; ?></td>
+                                            <td><?php echo $content; ?></td>
+                                            <td><a href="feedback_status_change.php?id=<?php echo $id; ?>">
+                                        <?php
+                                                    if($status == 0){
+                                                    
+                                                    ?>
+                                                <button class="btn btn-danger shadow-none">Inactive</button>
+                                                <?php
+                                                    }
+                                                    else{
+                                                    ?>
+                                                <button class="btn btn-success shadow-none">Active</button>
+                                                <?php
+                                                    }
+                                        ?>
                                             <td scope="row" class="text-center"><a
-                                                    href="team_member_delete.php?id=<?php echo $id; ?>"><button
+                                                    href="feedback_delete.php?id=<?php echo $id; ?>"><button
                                                         class="btn btn-danger shadow-none">Delete</button></a></td>
 
                                         </tr>
@@ -132,41 +134,32 @@ if(!empty($_SESSION['login'])){
                     <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="true"
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
-                            <form id="general_s_form" action="" method="post" enctype="multipart/form-data">
+                            <form id="general_s_form" action="" method="post">
                                 <?php
                                 if (isset($_POST["submit"])) {
                                     $name = $_POST["name"];
-                                    $image = $_FILES["image"]["name"];
-                                    $tmp_name = $_FILES["image"]["tmp_name"];
-                                    move_uploaded_file($tmp_name, "images/" . $image);
-                                    $designation = $_POST["designation"];
-                                    $facebook = $_POST["facebook"];
-                                    $instagram = $_POST["instagram"];
-                                    $twitter = $_POST["twitter"];
+                                    $date = $_POST["date"];
+                                    $content = $_POST["content"];
 
 
 
-                                    if (!empty($_POST["name"]) && !empty($_FILES["image"]["name"]) && !empty($_POST["designation"]) && !empty($_POST["facebook"]) && !empty($_POST["instagram"]) && !empty($_POST["twitter"])) {
+                                    if (!empty($_POST["name"])  && !empty($_POST["date"]) && !empty($_POST["content"])) {
 
-                                        $sql = "INSERT INTO team (name,image,designation,facebook,instagram,twitter)
-                                        VALUES('$name','$image','$designation','$facebook','$instagram','$twitter')";
+                                        $sql = "INSERT INTO feedback (name,date,content,status)
+                                        VALUES('$name','$date','$content',0)";
 
                                         global $connectingDB;
 
                                         $stmt = $connectingDB->prepare($sql);
                                         $stmt->bindValue(':Xname', $name);
-                                        $stmt->bindValue(':Ximage', $image);
-                                        $stmt->bindValue(':Xdesignation', $designation);
-                                        $stmt->bindValue(':Xfacebook', $facebook);
-                                        $stmt->bindValue(':Xinstagram', $instagram);
-                                        $stmt->bindValue(':Xtwitter', $twitter);
+                                        $stmt->bindValue(':Xdate', $date);
+                                        $stmt->bindValue(':Xcontent', $content);
                                         $result = $stmt->execute();
 
                                         if ($result) {
-                                            move_uploaded_file($tmp_name, $upload);
-                                            echo "<script>alert('Data succesfully inserted!');document.location='about_us.php'</script>";
+                                            echo "<script>alert('Data succesfully inserted!');document.location='feedback.php'</script>";
                                         } else {
-                                            echo "<script>alert('Data not inserted!!');document.location='about_us.php'</script>";
+                                            echo "<script>alert('Data not inserted!!');document.location='feedback.php'</script>";
                                         }
 
                                     } else {
@@ -182,46 +175,20 @@ if(!empty($_SESSION['login'])){
                                         <div class="mb-3">
                                             <label class="form-label fw-bold">Name</label>
                                             <input type="text" name="name" id="site_title_inp"
-                                                class="form-control shadow-none" placeholder="Team member name"
+                                                class="form-control shadow-none" placeholder="Enter Name"
                                                 required />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label fw-bold">Image (Image size must be in 600x600px)</label>
-                                            <input type="file" name="image" id="site_title_inp"
-                                                class="form-control shadow-none" required />
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label fw-bold">Designation</label>
-                                            <select class="form-select shadow-none" id="inputGroupSelect01"
-                                                name="designation" required>
-                                                <option selected>Choose Designation ...</option>
-                                                <?php
-                                                    $sql3 = "SELECT * FROM services";
-                                                    $stmt3 = $connectingDB->query($sql3);
-                                                    while($Data3 = $stmt3->fetch()){
-                                                        $s_name = $Data3["s_name"];
-                                                    
-                                                    ?>
-                                                <option value="<?php echo $s_name; ?>"><?php echo $s_name; ?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label fw-bold">Facebook Links</label>
-                                            <input type="text" name="facebook" id="site_title_inp"
-                                                class="form-control shadow-none" placeholder="Facebook Link" required />
-                                        </div>
-                                        <div class="mb-3">
-                                            <label class="form-label fw-bold">Instagram Links</label>
-                                            <input type="text" name="instagram" id="site_title_inp"
-                                                class="form-control shadow-none" placeholder="Instagram Link"
+                                            <label class="form-label fw-bold">Date</label>
+                                            <input type="text" name="date" id="site_title_inp"
+                                                class="form-control shadow-none" placeholder="Enter Date"
                                                 required />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label fw-bold">Twitter Links</label>
-                                            <input type="text" name="twitter" id="site_title_inp"
-                                                class="form-control shadow-none" placeholder="Twitter Link" required />
+                                            <label class="form-label fw-bold">Content</label>
+                                                <textarea name="content" id="" rows="5" class="form-control shadow-none" placeholder="Enter Content"></textarea>
                                         </div>
+                                        
 
                                     </div>
                                     <div class="modal-footer">
