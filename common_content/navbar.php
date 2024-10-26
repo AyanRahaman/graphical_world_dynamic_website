@@ -34,7 +34,7 @@ require_once("upper_links.php");
             <a href="" class="text-decoration-none">Register</a>
           </button>
           <button type="button" class="btn border border-warning border-2 shadow-none  mx-1 btn btn-outline-warning">
-            <a href="dashboard/admin_login" class="text-decoration-none">Login</a>
+            <a href="" class="text-decoration-none">Login</a>
           </button>
         </span>
       </div>

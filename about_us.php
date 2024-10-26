@@ -23,7 +23,7 @@ require_once("common_content/upper_links.php");
 
 // <-- navbar -->
 require_once("common_content/navbar.php");
-?>
+?><br><br>
 <!-- ===============================================================================================================  -->
 
 
@@ -31,12 +31,16 @@ require_once("common_content/navbar.php");
 
 
  <!--//===== ABOUT US SECTION START===== //-->
- <section class="bg-white"><br>
- <h2 class="pt-4 text-center fw-bold h-font">About Us</h2>
- <div class="h-line bg-dark mb-5"></div>
-
-
+ <section class="bg-white mt-5">
  <div class="container">
+
+ <div class="text-center section-title">
+      <div class="float-left">
+        <h2 class="">Services</h2>
+        <p class="">Check our Services</p>
+      </div>
+    </div>
+
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
   <?php
          require_once("dashboard/partials/DBconnect.php");
@@ -64,7 +68,7 @@ require_once("common_content/navbar.php");
     </div>
   </div>
 </div>
-</section>
+</section><br><br>
   <!--//===== ABOUT SECTION END===== //-->
 
 
@@ -75,11 +79,16 @@ require_once("common_content/navbar.php");
 
 
 <!-- //===== OUR TEAM SECTION START =====//  -->
-<h2 class="mt-5 pt-4 text-center fw-bold h-font">Our Team</h2>
-  <div class="h-line bg-dark mb-5"></div>
+
 
 
   <div class="container mb-5">
+
+  <div class="section-title">
+     <h2 class="">Team</h2>
+     <p class="">Meet with our team</p>
+   </div><br><br><br>
+
     <div class="row g-5">
                                   <?php
                                        require_once("dashboard/partials/DBconnect.php");
