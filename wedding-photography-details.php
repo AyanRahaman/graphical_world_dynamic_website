@@ -44,13 +44,6 @@ require_once("common_content/navbar.php");
           </h2>
 
           <p>
-            Wedding photography is a specialized genre of photography that focuses on capturing the joy, love, and
-            commitment of a couple's special day. It's a privilege to be a part of such an intimate and momentous
-            occasion, and a skilled wedding photographer can create lasting memories for the couple and their families.
-            In this article, we'll explore the art of wedding photography and what makes it so unique.
-          </p>
-          <hr />
-          <p>
             Wedding photography is more than just taking pictures—it’s about creating a legacy of memories. These images
             will be cherished by the couple, their families, and future generations. A great wedding photographer not
             only captures the moments but also enhances the story, creating a visual narrative that lasts a lifetime.
@@ -119,7 +112,7 @@ require_once("common_content/navbar.php");
 
 
           <nav class="blog-pagination mt-5" aria-label="Pagination">
-            <a href="contact_us.php"><button type="button" class="btn btn-dark rounded-0">
+            <a href="contact_us"><button type="button" class="btn btn-dark rounded-0">
                 Got a project? Contact us!
               </button></a>
           </nav>
@@ -127,18 +120,8 @@ require_once("common_content/navbar.php");
       </div>
 
       <div class="col-md-4 shadow bg-white">
-        <div class="position-sticky" style="top: 2rem">
-          <div class="p-4 mb-3 bg-body-tertiary rounded">
-            <h3 class="fst-italic">About Our Service</h3>
-            <p class="mb-0">
-              Our graphic design services cover a wide range of products – brochures, business cards, publications,
-              mailers, posters
-              and billboards – we’ve pretty much designed it all. With nearly 6 years of experience designing for print
-              and the web,
-              we’ll help your business convert potential clients into paying customers with well designed, printed
-              collateral.
-            </p>
-          </div>
+        <div class="position-sticky mt-5" style="top: 2rem">
+          
           <div>
             <h4 class="fst-italic">
               Our Recent project on Weeding Photography

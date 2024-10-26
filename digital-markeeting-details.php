@@ -60,7 +60,7 @@ require_once("common_content/navbar.php");
             <div class="row">
               <div class="col-lg-4">
               <?php
-                                       $sql2 = "SELECT * FROM s_services WHERE type = 'Graphics Design'";
+                                       $sql2 = "SELECT * FROM s_services WHERE type = 'Digital Markeeting'";
                                        $stmt2 = $connectingDB->query($sql2);
                                        while ($Data2 = $stmt2->fetch()) {
                                            $s_s_name = $Data2["s_s_name"];
@@ -79,7 +79,7 @@ require_once("common_content/navbar.php");
           </div>
           <ul class="list-unstyled">
                                    <?php
-                                       $sql3 = "SELECT * FROM s_s_c_project WHERE type = 'Graphics Design'";
+                                       $sql3 = "SELECT * FROM s_s_c_project WHERE type = 'Digital Markeeting'";
                                        $stmt3 = $connectingDB->query($sql3);
                                        while ($Data3 = $stmt3->fetch()) {
                                            $ssc_name = $Data3["ssc_name"];
@@ -99,7 +99,7 @@ require_once("common_content/navbar.php");
           
 
           <nav class="blog-pagination mt-5" aria-label="Pagination">
-            <a href="contact_us.php"><button type="button" class="btn btn-dark rounded-0">
+            <a href="contact_us"><button type="button" class="btn btn-dark rounded-0">
                 Got a project? Contact us!
               </button></a>
           </nav>
@@ -107,79 +107,59 @@ require_once("common_content/navbar.php");
       </div>
 
       <div class="col-md-4 shadow bg-white">
-        <div class="position-sticky" style="top: 2rem">
-          <div class="p-4 mb-3 bg-body-tertiary rounded">
-            <h3 class="fst-italic">About Our Service</h3>
-            <p class="mb-0">
-              Growing your business or organization can be tough. Using DPi Campaign Pro, 
-              though, can help you build and manage your contacts and never miss a lead. 
-              Using any of our solutions, you can help get your business started with a strong 
-              digital marketing strategy.
-            </p>
-          </div>
+        <div class="position-sticky mt-5" style="top: 2rem">
+          
           <div>
             <h4 class="fst-italic">
               Our Recent project on Digital Markeeting
             </h4>
             <ul class="list-unstyled">
+                                  <?php
+                                       $sql4 = "SELECT * FROM portfolio WHERE category = 'Digital Markeeting'";
+                                       $stmt4 = $connectingDB->query($sql4);
+                                       while ($Data4 = $stmt4->fetch()) {
+                                           $portfolio_image = $Data4["image"];
+                                           $portfolio_name = $Data4["name"];
+                                       
+                                       ?>
               <li>
                 <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                  href="#">
-                  <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <rect width="100%" height="100%" fill="#777"></rect>
-                  </svg>
+                  href="portfolio">
+                  <img class="bd-placeholder-img" width="100%" height="96" src="dashboard/images/<?php echo $portfolio_image; ?>" alt="dashboard/images/<?php echo $portfolio_image; ?>">
                   <div class="col-lg-8">
-                    <h6 class="mb-0">Example blog post title</h6>
-                    <small class="text-body-secondary">January 15, 2024</small>
+                    <h6 class="mb-0"><?php echo $portfolio_name; ?></h6>
                   </div>
                 </a>
               </li>
-              <li>
-                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                  href="#">
-                  <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <rect width="100%" height="100%" fill="#777"></rect>
-                  </svg>
-                  <div class="col-lg-8">
-                    <h6 class="mb-0">This is another blog post title</h6>
-                    <small class="text-body-secondary">January 14, 2024</small>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                  href="#">
-                  <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <rect width="100%" height="100%" fill="#777"></rect>
-                  </svg>
-                  <div class="col-lg-8">
-                    <h6 class="mb-0">
-                      Longer blog post title: This one has multiple lines!
-                    </h6>
-                    <small class="text-body-secondary">January 13, 2024</small>
-                  </div>
-                </a>
-              </li>
+              <?php } ?>
             </ul>
           </div>
 
           <div class="p-4">
             <h4 class="fst-italic">Follow Us</h4>
+                                       <?php
+                                       $sql5 = "SELECT * FROM  contact_us";
+                                       $stmt5 = $connectingDB->query($sql5);
+                                       while ($Data5 = $stmt5->fetch()) {
+                                           $facebook = $Data5["fb"];
+                                           $instagram = $Data5["insta"];
+                                           $twitter = $Data5["tw"];
+                                           $whatsapp = $Data5["whatp"];
+
+                                       }
+                                       ?>
             <ol class="list-unstyled" style="display: flex">
               <li class="m-2 border bg-dark border-black shadow px-3 py-2 rounded-circle">
-                <a class="text-decoration-none text-white" href="#"><i class="fab fa-facebook"></i></a>
+                <a class="text-decoration-none text-white" href="<?php echo $facebook; ?>" target="_blank"><i class="fab fa-facebook"></i></a>
               </li>
               <li class="m-2 border bg-dark border-black shadow px-3 py-2 rounded-circle">
-                <a class="text-decoration-none text-white" href="#"><i class="fab fa-instagram"></i></a>
+                <a class="text-decoration-none text-white" href="<?php echo $instagram; ?>" target="_blank"><i class="fab fa-instagram"></i></a>
               </li>
               <li class="m-2 border bg-dark border-black shadow px-3 py-2 rounded-circle">
-                <a class="text-decoration-none text-white" href="#"><i class="fab fa-whatsapp"></i></a>
+                <a class="text-decoration-none text-white" href="<?php echo $whatsapp; ?>" target="_blank"><i class="fab fa-whatsapp"></i></a>
               </li>
               <li class="m-2 border bg-dark border-black shadow px-3 py-2 rounded-circle">
-                <a class="text-decoration-none text-white" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="text-decoration-none text-white" href="<?php echo $twitter; ?>" target="_blank"><i class="fab fa-twitter"></i></a>
               </li>
             </ol>
           </div>
