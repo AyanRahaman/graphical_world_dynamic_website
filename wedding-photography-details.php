@@ -37,16 +37,24 @@ require_once("common_content/navbar.php");
   <div class="container mb-5">
     <div class="row g-5 mt-3">
       <div class="col-md-8">
-        <img src="image/photography_services.png" height="200px" width="100%" class="" alt="..." />
+                                <?php
+                                require_once("dashboard/partials/DBconnect.php");
+                                $sql = "SELECT * FROM s_content WHERE id = 4";
+                                $stmt = $connectingDB->query($sql);
+                                while($Data = $stmt->fetch()) {
+                                  $image = $Data["image"];
+                                  $about = $Data["about"];   
+                                  $type = $Data["type"];                       
+                                }
+                                ?>
+        <img src="image/<?php echo $image; ?>" height="200px" width="100%" class="" alt="<?php echo $image ?>" />
         <article class="blog-post shadow p-3 bg-white">
           <h2 class="display-5 link-body-emphasis mb-3 fw-bold text-center">
-            Photography
+          <?php echo $type; ?>
           </h2>
 
           <p>
-            Wedding photography is more than just taking pictures—it’s about creating a legacy of memories. These images
-            will be cherished by the couple, their families, and future generations. A great wedding photographer not
-            only captures the moments but also enhances the story, creating a visual narrative that lasts a lifetime.
+            <?php echo $about; ?>
           </p><br>
           <hr>
           <div class="bg-white blog_details">
@@ -55,32 +63,16 @@ require_once("common_content/navbar.php");
           <div class="our_services">
             <div class="row">
               <div class="col-lg-4">
+                              <?php
+                                $sql2 = "SELECT * FROM s_services WHERE type ='Wedding Photogrpahy'";
+                                $stmt2 = $connectingDB->query($sql2);
+                                while($Data2 = $stmt2->fetch()) {
+                                  $s_s_name = $Data2["s_s_name"];                      
+                                
+                                ?>
                 <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Logo Design</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">LetterHeads</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Flyers</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Brochur</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Info graphic</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Stickers</span><br />
-              </div>
-              <div class="col-lg-4">
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Banners</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Visiting Card</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Business Card</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Social Media Post</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Creative Add</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Branding and More....</span><br />
+                <span class="fw-bold"><?php echo $s_s_name; ?></span><br />
+              <?php } ?>
               </div>
             </div>
           </div>
@@ -89,21 +81,17 @@ require_once("common_content/navbar.php");
             <h5>Some common projects we have wroked on included</h5>
           </div>
           <ul class="list-unstyled">
+                              <?php
+                                $sql3= "SELECT * FROM s_s_c_project WHERE type ='Wedding Photogrpahy'";
+                                $stmt3 = $connectingDB->query($sql3);
+                                while($Data3 = $stmt3->fetch()) {
+                                  $ssc_name = $Data3["ssc_name"];                      
+                                
+                                ?>
             <li>
-              <i class="fa-solid fa-diamond text-warning"></i> Brochures, rack cards & booklets
+              <i class="fa-solid fa-diamond text-warning"></i> <?php echo $ssc_name; ?>
             </li>
-            <li>
-              <i class="fa-solid fa-diamond text-warning"></i> Logos and branded elements
-            </li>
-            <li>
-              <i class="fa-solid fa-diamond text-warning"></i> Posters, banners and signage
-            </li>
-            <li>
-              <i class="fa-solid fa-diamond text-warning"></i> Social media graphics & digital marketing ads
-            </li>
-            <li>
-              <i class="fa-solid fa-diamond text-warning"></i> Email marketing graphics
-            </li>
+            <?php } ?>
           </ul>
           <hr>
 
@@ -173,18 +161,29 @@ require_once("common_content/navbar.php");
 
           <div class="p-4">
             <h4 class="fst-italic">Follow Us</h4>
+                                    <?php
+                                       $sql5 = "SELECT * FROM  contact_us";
+                                       $stmt5 = $connectingDB->query($sql5);
+                                       while ($Data5 = $stmt5->fetch()) {
+                                           $facebook = $Data5["fb"];
+                                           $instagram = $Data5["insta"];
+                                           $twitter = $Data5["tw"];
+                                           $whatsapp = $Data5["whatp"];
+
+                                       }
+                                       ?>
             <ol class="list-unstyled" style="display: flex">
               <li class="m-2 border bg-dark border-black shadow px-3 py-2 rounded-circle">
-                <a class="text-decoration-none text-white" href="#"><i class="fab fa-facebook"></i></a>
+                <a class="text-decoration-none text-white" href="<?php echo $facebook; ?>"><i class="fab fa-facebook"></i></a>
               </li>
               <li class="m-2 border bg-dark border-black shadow px-3 py-2 rounded-circle">
-                <a class="text-decoration-none text-white" href="#"><i class="fab fa-instagram"></i></a>
+                <a class="text-decoration-none text-white" href="<?php echo $instagram; ?>"><i class="fab fa-instagram"></i></a>
               </li>
               <li class="m-2 border bg-dark border-black shadow px-3 py-2 rounded-circle">
-                <a class="text-decoration-none text-white" href="#"><i class="fab fa-whatsapp"></i></a>
+                <a class="text-decoration-none text-white" href="<?php echo $whatsapp; ?>"><i class="fab fa-whatsapp"></i></a>
               </li>
               <li class="m-2 border bg-dark border-black shadow px-3 py-2 rounded-circle">
-                <a class="text-decoration-none text-white" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="text-decoration-none text-white" href="<?php echo $twitter; ?>"><i class="fab fa-twitter"></i></a>
               </li>
             </ol>
           </div>

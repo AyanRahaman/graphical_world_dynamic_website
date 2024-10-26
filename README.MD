@@ -27,4 +27,7 @@
        -- Portfolio page fully dynamic complete 
 
 8. 25/10/2024
-       -- Services page succesfully completed             
+       -- Services page succesfully completed 
+
+9. 26/10/2024
+       -- All services section dynamic complete       
