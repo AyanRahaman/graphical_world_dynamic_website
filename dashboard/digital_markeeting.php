@@ -62,8 +62,6 @@ if(!empty($_SESSION['login'])){
                                        $stmt = $connectingDB->query($sql);
                                        while ($Data = $stmt->fetch()) {
                                            $about = $Data["about"];
-                                           $h1 = $Data["h1"];
-                                           $h2 = $Data["h2"];
                                            $type = $Data["type"];
                                        }
                                        ?>
@@ -78,10 +76,6 @@ if(!empty($_SESSION['login'])){
                                 </div>
                                 <h6 class="card-subtitle mb-1 fw-bold">About</h6>
                                 <p class="card-text" id="site_title"><?php echo $about; ?></p>
-                                <h6 class="card-subtitle mb-1 fw-bold">Heading 1</h6>
-                                <p class="card-text" id="site_about"><?php echo $h1; ?></p>
-                                <h6 class="card-subtitle mb-1 fw-bold">Heading 2</h6>
-                                <p class="card-text" id="site_about"><?php echo $h2; ?></p>
                             </div>
                             <!-- ===Testimonisal image body section end===  -->
                             <!--===Testimonisal image body Modal start===-->
@@ -90,15 +84,11 @@ if(!empty($_SESSION['login'])){
                               if (isset($_POST["digital_markeeting"])) {
                                 
                                   $about = $_POST["about"];
-                                  $h1 = $_POST["h1"];
-                                  $h2 = $_POST["h2"];
 
                                  
+                                  if(!empty($_POST["about"])){
 
-
-                                  if(!empty($_POST["about"]) && !empty($_POST["h1"]) && !empty($_POST["h2"])){
-
-                                    $query3 = "UPDATE s_content SET about = '$about', h1 = '$h1', h2 = '$h2' WHERE type = 'Digital Markeeting'";
+                                    $query3 = "UPDATE s_content SET about = '$about'  WHERE type = 'Digital Markeeting'";
                               
                                     $result3 = $connectingDB->query($query3);
                               
@@ -126,16 +116,6 @@ if(!empty($_SESSION['login'])){
                                     <label class="form-label fw-bold">About</label>
                                     <textarea class="form-control shadow-none" rows="5" name="about"
                                         id="site_about_inp" required><?php echo $about; ?></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label fw-bold">Heading 1</label>
-                                    <textarea class="form-control shadow-none" rows="5" name="h1"
-                                        id="site_about_inp" required><?php echo $h1; ?></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label fw-bold">Heading 2</label>
-                                    <textarea class="form-control shadow-none" rows="5" name="h2"
-                                        id="site_about_inp" required><?php echo $h2; ?></textarea>
                                 </div>
                                 
                             </div>

@@ -129,8 +129,6 @@ require_once("common_content/navbar.php");
                 </a>
               </li>
               <?php } ?>
-              <li>
-              </li>
             </ul>
           </div>
 

@@ -26,39 +26,29 @@ require_once("common_content/navbar.php");
 <!-- ===============================================================================================================  -->
 
 
-<?php
-         require_once("dashboard/partials/DBconnect.php");
-         $sql1 = "SELECT * FROM s_content WHERE type = 'Digital Markeeting'";
-         $stmt1 = $connectingDB->query($sql1);
-         while ($Data1 = $stmt1->fetch()) {
-             $image = $Data1["image"];
-             $about = $Data1["about"];
-             $h1 = $Data1["h1"];
-             $h2 = $Data1["h2"];
-             $type = $Data1["type"];
-         }
-         
-         ?>
-
-
-
 
 <!-- ===== BLOG PART START ===== -->
 <div class="container mb-5">
     <div class="row g-5 mt-3">
       <div class="col-md-8">
-        <img src="image/digital_markeeting_service.jpg" height="200px" width="100%" class="" alt="..." />
+                                    <?php
+                                       require_once("dashboard/partials/DBconnect.php");
+                                       
+                                       $sql = "SELECT * FROM s_content WHERE id = 3";
+                                       $stmt = $connectingDB->query($sql);
+                                       while ($Data = $stmt->fetch()) {
+                                           $image = $Data["image"];
+                                           $about = $Data["about"];
+                                           $type = $Data["type"];
+                                       }
+                                       ?>
+        <img src="dashboard/images/<?php echo $image; ?>" height="200px" width="100%" class="" alt="<?php echo $image; ?>" />
         <article class="blog-post shadow p-3 bg-white">
           <h2 class="display-5 link-body-emphasis mb-3 fw-bold text-center">
             <?php echo $type; ?>
           </h2>
-
           <p>
-            <?php echo $h1; ?>
-          </p>
-          <hr />
-          <p>
-          <?php echo $h2; ?>
+          <?php echo $about; ?>
           </p><br>
           <hr>
           <div class="bg-white blog_details">
@@ -69,33 +59,18 @@ require_once("common_content/navbar.php");
           <div class="our_services">
             <div class="row">
               <div class="col-lg-4">
+              <?php
+                                       $sql2 = "SELECT * FROM s_services WHERE type = 'Graphics Design'";
+                                       $stmt2 = $connectingDB->query($sql2);
+                                       while ($Data2 = $stmt2->fetch()) {
+                                           $s_s_name = $Data2["s_s_name"];
+                                       
+                                       ?>
                 <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Logo Design</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">LetterHeads</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Flyers</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Brochur</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Info graphic</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Stickers</span><br />
+                <span class="fw-bold"><?php echo $s_s_name; ?></span><br />
+                <?php } ?>
               </div>
-              <div class="col-lg-6">
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Search Engine Optimization(SEO)</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">paid Media</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Content Markeeting</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold"> Digital Markeeting</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold"> Conservation Rate Optimization</span><br />
-                <i class="fa-solid fa-check-double" style="color: #3440f4"></i>
-                <span class="fw-bold">Branding and More....</span><br />
-              </div>
+             
             </div>
           </div>
           <br><br>
@@ -103,21 +78,17 @@ require_once("common_content/navbar.php");
             <h5>Some common projects we have wroked on included</h5>
           </div>
           <ul class="list-unstyled">
+                                   <?php
+                                       $sql3 = "SELECT * FROM s_s_c_project WHERE type = 'Graphics Design'";
+                                       $stmt3 = $connectingDB->query($sql3);
+                                       while ($Data3 = $stmt3->fetch()) {
+                                           $ssc_name = $Data3["ssc_name"];
+                                       
+                                       ?>
             <li>
-              <i class="fa-solid fa-diamond text-warning"></i> Search Engine Optimization(SEO)
+              <i class="fa-solid fa-diamond text-warning"></i> <?php echo $ssc_name; ?>
             </li>
-            <li>
-              <i class="fa-solid fa-diamond text-warning"></i> paid Media
-            </li>
-            <li>
-              <i class="fa-solid fa-diamond text-warning"></i> Content Markeeting
-            </li>
-            <li>
-              <i class="fa-solid fa-diamond text-warning"></i> Digital Markeeting
-            </li>
-            <li>
-              <i class="fa-solid fa-diamond text-warning"></i> Conservation Rate Optimization
-            </li>
+           <?php } ?>
           </ul>
           <hr>
 
