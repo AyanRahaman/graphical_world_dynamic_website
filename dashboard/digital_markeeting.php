@@ -58,12 +58,13 @@ if(!empty($_SESSION['login'])){
                             <?php
                                        require_once("partials/DBconnect.php");
                                        
-                                       $sql = "SELECT * FROM s_content WHERE id = 3";
+                                       $sql = "SELECT * FROM s_content WHERE type = 'Digital Markeeting'";
                                        $stmt = $connectingDB->query($sql);
                                        while ($Data = $stmt->fetch()) {
                                            $about = $Data["about"];
                                            $h1 = $Data["h1"];
                                            $h2 = $Data["h2"];
+                                           $type = $Data["type"];
                                        }
                                        ?>
                             <div class="card-body">
@@ -97,7 +98,7 @@ if(!empty($_SESSION['login'])){
 
                                   if(!empty($_POST["about"]) && !empty($_POST["h1"]) && !empty($_POST["h2"])){
 
-                                    $query3 = "UPDATE s_content SET about = '$about', h1 = '$h1', h2 = '$h2'  WHERE id=3";
+                                    $query3 = "UPDATE s_content SET about = '$about', h1 = '$h1', h2 = '$h2' WHERE type = 'Digital Markeeting'";
                               
                                     $result3 = $connectingDB->query($query3);
                               

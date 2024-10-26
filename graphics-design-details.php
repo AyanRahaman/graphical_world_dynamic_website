@@ -36,26 +36,24 @@ require_once("common_content/navbar.php");
       <div class="col-md-8">
         <img src="image/graphic_design_service.jpg" height="200px" width="100%" class="" alt="..." />
         <article class="blog-post shadow p-3 bg-white">
+        <?php
+                                       require_once("dashboard/partials/DBconnect.php");
+                                       
+                                       $sql = "SELECT * FROM s_content WHERE id = 1";
+                                       $stmt = $connectingDB->query($sql);
+                                       while ($Data = $stmt->fetch()) {
+                                           $about = $Data["about"];
+                                           $type = $Data["type"];
+                                       }
+                                       ?>
           <h2 class="display-5 link-body-emphasis mb-3 fw-bold text-center">
-            Graphics Design
+            <?php echo $type; ?>
           </h2>
 
           <p>
-            Graphic design is the art of communicating ideas and messages
-            through visual elements such as typography, color, images, and
-            shapes. It is a crucial aspect of branding, marketing, and
-            communication, as it has the power to capture attention, convey
-            emotions, and create lasting impressions. In this article, we will
-            explore the world of graphic design, its importance, and how it
-            can be used to shape your brand
+           <?php echo $about; ?>
           </p>
-          <hr />
-          <p>
-            Graphic design is more than just making things look pretty. It is
-            a strategic tool that can help businesses and organizations
-            communicate their message, build their brand, and connect with
-            their audience
-          </p><br><hr>
+          <br><hr>
           <div class="blog_details">
             <h5>OUR SERVICES</h5>
           </div>

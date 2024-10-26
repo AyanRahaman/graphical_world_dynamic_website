@@ -111,8 +111,6 @@ require_once("common_content/navbar.php");
                  while ($Data = $stmt->fetch()) {
                     $image = $Data["image"];
                     $about = $Data["about"];
-                    $h1 = $Data["h1"];
-                    $h2 = $Data["h2"];
                     $type = $Data["type"];
 
                  }
@@ -120,7 +118,12 @@ require_once("common_content/navbar.php");
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-chart-simple fs-2 rounded p-3 bg-warning"></i>
                     <a href="graphics-design-details" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type; ?></h4></a>
-                    <p><?php echo $about; ?></p>
+                    <p>
+                    <?php 
+                    $more = "<span class='text-danger'>...Fore more click the Services Details Section</span>";
+                    echo mb_strimwidth($about, 0, 200, $more);
+                    ?>
+                    </p>
                  </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-4">
@@ -130,8 +133,6 @@ require_once("common_content/navbar.php");
                         while ($Data = $stmt->fetch()) {
                            $image2 = $Data["image"];
                            $about2 = $Data["about"];
-                           $h12 = $Data["h1"];
-                           $h22 = $Data["h2"];
                            $type2 = $Data["type"];
 
                         }
@@ -139,7 +140,12 @@ require_once("common_content/navbar.php");
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-camera-rotate fs-2 rounded p-3 bg-warning"></i>
                     <a href="webdev-details" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type2; ?></h4></a>
-                    <p><?php echo $about2; ?></p>
+                    <p>
+                    <?php 
+                    $more = "<span class='text-danger'>...Fore more click the Services Details Section</span>";
+                    echo mb_strimwidth($about2, 0, 200, $more);
+                    ?>
+                    </p>
                  </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-4">
@@ -149,8 +155,6 @@ require_once("common_content/navbar.php");
                         while ($Data = $stmt->fetch()) {
                            $image3 = $Data["image"];
                            $about3 = $Data["about"];
-                           $h13 = $Data["h1"];
-                           $h23 = $Data["h2"];
                            $type3 = $Data["type"];
 
                         }
@@ -158,7 +162,12 @@ require_once("common_content/navbar.php");
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-wand-magic-sparkles fs-2 rounded p-3 bg-warning"></i>
                     <a href="digital-markeeting-details" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type3; ?></h4></a>
-                    <p><?php echo $about3; ?></p>
+                    <p>
+                    <?php 
+                    $more = "<span class='text-danger'>...Fore more click the Services Details Section</span>";
+                    echo mb_strimwidth($about3, 0, 200, $more);
+                    ?>
+                    </p>
                  </div>
             </div>
             <div class="col-lg-6 col-md-6 mb-4">
@@ -168,8 +177,6 @@ require_once("common_content/navbar.php");
                         while ($Data = $stmt->fetch()) {
                            $image4 = $Data["image"];
                            $about4 = $Data["about"];
-                           $h14 = $Data["h1"];
-                           $h24 = $Data["h2"];
                            $type4 = $Data["type"];
 
                         }
@@ -177,7 +184,12 @@ require_once("common_content/navbar.php");
                  <div class="bg-white rounded border border-1 p-5 text-center box pop">
                     <i class="fa-solid fa-earth-oceania fs-2 rounded p-3 bg-warning"></i>
                     <a href="wedding-photography-details" class="text-decoration-none text-outline-danger text-dark"><h4 class="mt-3 fw-bold"><?php echo $type4; ?></h4></a>
-                    <p><?php echo $about4; ?></p>
+                    <p>
+                    <?php 
+                    $more = "<span class='text-danger'>...Fore more click the Services Details Section</span>";
+                    echo mb_strimwidth($about4, 0, 200, $more);
+                    ?>
+                    </p>
                  </div>
             </div>
         </div>
