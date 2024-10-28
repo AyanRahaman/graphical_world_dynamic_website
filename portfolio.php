@@ -38,7 +38,7 @@ require_once("common_content/navbar.php");
             <div class="row">
 
             <?php
-        require_once("<dashboard/partials/DBconnect.php");
+        require_once("dashboard/partials/DBconnect.php");
 
         /*****Pagination part start*****/
         $sql1="SELECT * FROM portfolio";
