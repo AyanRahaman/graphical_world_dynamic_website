@@ -367,7 +367,7 @@ require_once("common_content/navbar.php");
         <div class="review-card swiper-slide p-4 shadow border border-dark">
           <div class="header-content">
             <div class="img-area">
-              <img alt="customer1" src="image/feedback.png">
+              <img alt="customer" src="image/feedback.png">
             </div>
             <div class="info">
               <h4><?php echo $name; ?></h4>

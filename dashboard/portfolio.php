@@ -66,7 +66,7 @@ if (!empty($_SESSION['login'])) {
 
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <h4 class="card-title m-0 fw-bold fst-italic text-success">Our Team</h4>
+                            <h4 class="card-title m-0 fw-bold fst-italic text-success">Portfolio</h4>
                             <!-- ==Button trigger modal== -->
                             <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
                                 data-bs-target="#general-s">
@@ -74,6 +74,12 @@ if (!empty($_SESSION['login'])) {
                             </button>
                         </div>
                         <div class="card-body">
+                        <div class="card-header bg-white shadow-sm">
+                        <form class="d-flex mb-4 mt-4" action="portfolio_search.php" method="GET">
+                            <input class="form-control rounded-0 shadow-none border border-dark p-2" name="search_text"  placeholder="Search by Name" aria-label="Search">
+                            <button class="btn btn-dark rounded-0 border border-dark shadow-none"name="submit" type="submit">Search</button>
+                        </form>
+                        </div>
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -124,7 +130,7 @@ if (!empty($_SESSION['login'])) {
                                                 <img src="images/<?php echo $image; ?>" width="150px" height="150px"
                                                     alt="<?php echo $image; ?>">
                                             </td>
-                                            <td class="text-uppercase"><?php echo $name; ?></td>
+                                            <td scope="row"><?php echo $name; ?></td>
                                             <td scope="row" class="text-center"><a
                                                     href="portfolio_delete.php?id=<?php echo $id; ?>"><button
                                                         class="btn btn-danger shadow-none">Delete</button></a></td>

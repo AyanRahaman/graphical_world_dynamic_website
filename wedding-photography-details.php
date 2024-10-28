@@ -47,7 +47,7 @@ require_once("common_content/navbar.php");
                                   $type = $Data["type"];                       
                                 }
                                 ?>
-        <img src="image/<?php echo $image; ?>" height="200px" width="100%" class="" alt="<?php echo $image ?>" />
+        <img src="dashboard/images/<?php echo $image; ?>" height="200px" width="100%" class="" alt="<?php echo $image ?>" />
         <article class="blog-post shadow p-3 bg-white">
           <h2 class="display-5 link-body-emphasis mb-3 fw-bold text-center">
           <?php echo $type; ?>
@@ -115,47 +115,24 @@ require_once("common_content/navbar.php");
               Our Recent project on Weeding Photography
             </h4>
             <ul class="list-unstyled">
+            <?php
+                                $sql3= "SELECT * FROM portfolio WHERE category ='Wedding Photogrpahy' LIMIT 5";
+                                $stmt3 = $connectingDB->query($sql3);
+                                while($Data3 = $stmt3->fetch()) {
+                                  $portfolio_image = $Data3["image"];                      
+                                  $portfolio_name = $Data3["name"];                      
+                                
+                                ?>
               <li>
                 <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                  href="#">
-                  <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <rect width="100%" height="100%" fill="#777"></rect>
-                  </svg>
+                  href="portfolio">
+                  <img class="bd-placeholder-img" width="100%" height="96" src="dashboard/images/<?php echo $portfolio_image; ?>" alt="<?php echo $portfolio_image; ?>" >
                   <div class="col-lg-8">
-                    <h6 class="mb-0">Example blog post title</h6>
-                    <small class="text-body-secondary">January 15, 2024</small>
+                    <h6 class="mb-0"><?php echo $portfolio_name; ?></h6>
                   </div>
                 </a>
               </li>
-              <li>
-                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                  href="#">
-                  <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <rect width="100%" height="100%" fill="#777"></rect>
-                  </svg>
-                  <div class="col-lg-8">
-                    <h6 class="mb-0">This is another blog post title</h6>
-                    <small class="text-body-secondary">January 14, 2024</small>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top"
-                  href="#">
-                  <svg class="bd-placeholder-img" width="100%" height="96" xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <rect width="100%" height="100%" fill="#777"></rect>
-                  </svg>
-                  <div class="col-lg-8">
-                    <h6 class="mb-0">
-                      Longer blog post title: This one has multiple lines!
-                    </h6>
-                    <small class="text-body-secondary">January 13, 2024</small>
-                  </div>
-                </a>
-              </li>
+             <?php } ?>
             </ul>
           </div>
 

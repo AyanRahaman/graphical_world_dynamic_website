@@ -228,7 +228,7 @@ if (!empty($_SESSION['login'])) {
                                 <tbody>
                                     <?php
                                     require_once("partials/DBconnect.php");
-                                    $sql = "SELECT * FROM team";
+                                    $sql = "SELECT * FROM team ORDER BY id DESC";
 
                                     $stmt = $connectingDB->query($sql);
                                     while ($Data = $stmt->fetch()) {

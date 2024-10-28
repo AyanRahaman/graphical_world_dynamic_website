@@ -24,6 +24,13 @@ if(!empty($_SESSION['login'])){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body class="">
 
@@ -52,18 +59,15 @@ if(!empty($_SESSION['login'])){
                     
                     <!-- Table Element -->
                     <div class="card border-0">
+                        
                         <div class="card-body shadow bg-white">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
+                                        <th scope="col">Image</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Phone</th>
-                                        <th scope="col">Message</th>
-                                        <th scope="col">Status</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
+                                        <th scope="col">Delete</th>
                                 </thead>
                                 <tbody>
                                 <?php
@@ -75,7 +79,7 @@ if(!empty($_SESSION['login'])){
                            if(isset($_GET['search_text'])){
                            $search_text =$_GET['search_text'];
                            
-                           $sql = "SELECT * FROM client_message WHERE name LIKE '$search_text' OR email LIKE '$search_text' OR phone LIKE '$search_text'";
+                           $sql = "SELECT * FROM portfolio WHERE name LIKE '$search_text'";
                            $query = $connectingDB->query($sql);
                                            
                            echo "<h5 class='text-black'>your search result for :-<span class='text-primary'>$search_text</span></h5>";
@@ -85,33 +89,19 @@ if(!empty($_SESSION['login'])){
                            
                                while($Data = $query->fetch()){
                                    $id = $Data["id"];
+                                   $image = $Data["image"];
                                    $name = $Data["name"];
-                                   $email = $Data["email"];
-                                   $phone = $Data["phone"];
-                                   $message = $Data["message"];
-                                   $status = $Data["status"];
                                ?>
                                     <tr>
                                         <th scope="row"><?php echo $id; ?></th>
+                                        <td scope="row">
+                                                <img src="images/<?php echo $image; ?>" width="150px" height="150px"
+                                                    alt="<?php echo $image; ?>">
+                                            </td>
                                         <td><?php echo $name; ?></td>
-                                        <td><?php echo $email; ?></td>
-                                        <td><?php echo $phone; ?></td>
-                                        <td><?php echo $message; ?></td>
-                                        <td><a href="status_change.php?id=<?php echo $id; ?>">
-                                        <?php
-                                                    if($status == 0){
-                                                    
-                                                    ?>
-                                                <button class="btn btn-danger shadow-none">Incomplete</button>
-                                                <?php
-                                                    }
-                                                    else{
-                                                    ?>
-                                                <button class="btn btn-success shadow-none">Complate</button>
-                                                <?php
-                                                    }
-                                        ?>
-                                        <td><a href="delete_query.php?id=<?php echo $id; ?>"><button class="btn btn-danger shadow-none">delete</button></a></td>
+                                        <td scope="row" class="text-center"><a
+                                                    href="portfolio_delete.php?id=<?php echo $id; ?>"><button
+                                                        class="btn btn-danger shadow-none">Delete</button></a></td>
                                     </tr>
                                     <?php
                                         }

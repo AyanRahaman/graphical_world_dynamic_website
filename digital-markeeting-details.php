@@ -115,7 +115,7 @@ require_once("common_content/navbar.php");
             </h4>
             <ul class="list-unstyled">
                                   <?php
-                                       $sql4 = "SELECT * FROM portfolio WHERE category = 'Digital Markeeting'";
+                                       $sql4 = "SELECT * FROM portfolio WHERE category = 'Digital Markeeting' LIMIT 5";
                                        $stmt4 = $connectingDB->query($sql4);
                                        while ($Data4 = $stmt4->fetch()) {
                                            $portfolio_image = $Data4["image"];

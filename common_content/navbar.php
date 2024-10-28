@@ -17,7 +17,7 @@ require_once("upper_links.php");
             <a class="nav-link active text-warning fw-bold" aria-current="page" href="index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fw-bold" href="about_us">About Us</a>
+            <a class="nav-link text-white fw-bold" href="about_us">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white fw-bold" href="services">Services</a>
@@ -26,7 +26,7 @@ require_once("upper_links.php");
             <a class="nav-link text-white fw-bold" href="portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white fw-bold" href="contact_us">Contact us</a>
+            <a class="nav-link text-white fw-bold" href="contact_us">Contact</a>
           </li>
         </ul>
         <span class="navbar-text">
