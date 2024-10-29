@@ -87,7 +87,7 @@ if(!empty($_SESSION['login'])){
                                 <tbody>
                                     <?php
                                     require_once("partials/DBconnect.php");
-                                    $sql = "SELECT * FROM feedback";
+                                    $sql = "SELECT * FROM feedback ORDER BY ID DESC";
 
                                     $stmt = $connectingDB->query($sql);
                                     while ($Data = $stmt->fetch()) {
